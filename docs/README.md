@@ -23,9 +23,16 @@ sufficient CSS styling:
 - [ ] Upvote / Downvote Answer
 - [ ] Production README [sample](docs/production_readme.md)
 
+## Design Docs
 
+[View Wireframes][wireframes]
+[Reach Components][components]
+[API Endpoints][endpoints]
+[DB Schema][schema]
+[Sample State][state]
 
-api-endpoint.md
-component-hierarchy.md
-sample-state.md
-schema.md
+[wireframes]: docs/wireframes
+[components]: docs/wireframes
+[endpoints]: docs/wireframes
+[schema]: docs/wireframes
+[state]: docs/wireframes
