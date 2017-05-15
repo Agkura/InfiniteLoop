@@ -45,7 +45,7 @@ sufficient CSS styling:
 and un-authenticated views as well as tabs filters.
 ### Phase 3: Upvotes ( 2 days )
 **Objective:** Upvotes functionality on Question show pages with visibility.
-### Phase 4: Implement Search ( 3 days )
+### Phase 4: Implement Search ( 1 days )
 **objective:** Answer index visible beneath all question show pages.
 ### Phase 5: Profile Page for users ( 1 day )
 **objective:** Filter user questions on profile pages and style accordingly
