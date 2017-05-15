@@ -31,11 +31,11 @@ sufficient CSS styling:
 * [DB Schema][schema]
 * [Sample State][state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[endpoints]: docs/wireframes
-[schema]: docs/sample-state.md
-[state]: docs/schema.md
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[endpoints]: api_endpoints.md
+[schema]: schema.md
+[state]: sample-state.md
 
 ## Implementation Timeline
 ### Phase 1: Backend Setup and Full User Auth ( 3 days )
