@@ -25,15 +25,8 @@ body            | text      | not null
 author_id       | integer   | not null, foreign key (references users), indexed
 question_id     | integer   | not null, foreign key (references questions), indexed, unique [author_id]
 
-## question_upvotes
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-score           | integer   | not null
-author_id       | integer   | not null, foreign key (references users), indexed
-question_id     | integer   | not null, foreign key (references questions), indexed, unique [author_id]
 
-## answer_upvotes
+## votes
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
