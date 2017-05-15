@@ -29,3 +29,9 @@
 - `GET /api/answers`
 - `GET /api/answers/:answer_id`
 - `DELETE /api/answers/:answer_id`
+
+### Votes
+- `POST /api/answers/:answer_id/upvote`
+- `POST /api/answers/:answer_id/downvote`
+- `DELETE /api/answers/:answer_id/upvote`
+- `DELETE /api/answers/:answer_id/downvote`
