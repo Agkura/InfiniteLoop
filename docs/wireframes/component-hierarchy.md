@@ -2,13 +2,17 @@
 
 **NavBar**
  * SearchContainer
+ 
 **QuestionIndexContainer**
  * QuestionDetail
+ 
 **AuthFormContainer**
  * AuthForm
+ 
 **UserProfileContainer**
  * UserQuestionIndexContainer
   * UserQuestionDetail
+  
 **QuestionShowContainer**
  * QuestionShow
  * AnswersContainer
