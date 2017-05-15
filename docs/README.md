@@ -36,3 +36,25 @@ sufficient CSS styling:
 [endpoints]: docs/wireframes
 [schema]: docs/wireframes
 [state]: docs/wireframes
+
+## Implementation Timeline
+### Phase 1: Backend Setup and Full User Auth ( 3 days )
+**objective:** Fully functional authentication from rails to react/redux.
+### Phase 2: Questions Index with Tabs ( 2 days )
+**objective:** Question index containers visible across both authenticated
+and un-authenticated views as well as tabs filters.
+### Phase 3: Upvotes ( 2 days )
+**Objective:** Upvotes functionality on Question show pages with visibility.
+### Phase 4: Implement Search ( 3 days )
+**objective:** Answer index visible beneath all question show pages.
+### Phase 5: Profile Page for users ( 1 day )
+**objective:** Filter user questions on profile pages and style accordingly
+### Phase 6: Activity Container for authenticated users ( 1 day )
+**objective:** Render upvotes and answered questions under activity container.
+### Phase 7: CSS ( 1 day )
+**objective:** Tabs and modals.
+### Bonus: (TBD)
+- [ ] Question Categories
+- [ ] Comments on Questions/AnswersContainer
+- [ ] Polymorphic Up/Down Votes: Questions/Answers/Comments
+- [ ] Code snippets in Answers
