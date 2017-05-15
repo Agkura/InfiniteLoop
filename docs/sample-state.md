@@ -15,11 +15,11 @@
       authorId: "5"
     }
   },
-  current_user{
+  currentUser{
     username: "stackme",
     id: "500"
   },
-  user_questions{
+  userQuestions{
     5: {
       title: "My question",
       body: "My problem",
