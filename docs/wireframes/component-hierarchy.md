@@ -5,6 +5,10 @@
  
 **QuestionIndexContainer**
  * QuestionDetail
+   - NewQuestions
+   - TrendingQuestions
+   - UserQuestionIndexContainer
+     + UserQuestionDetail
  
 **AuthFormContainer**
  * AuthForm
@@ -31,7 +35,7 @@
 | "/user/:username" | "UserProfileContainer" |
 | "/new" | "NewQuestions" |
 | "/trending" | "TrendingQuestions" |
-| "/:username" | "UserQuestionsContainer" |
+| "/:username" | "UserQuestionIndexContainer" |
 | "/:questionId" | "QuestionShowContainer" |
 | "/:questionId" | "AnswersContainer" |
 | "/:questionId" | "AnswerDetail" |
