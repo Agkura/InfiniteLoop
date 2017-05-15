@@ -1,7 +1,9 @@
 ## Component Hierarchy
 
-**AuthFormContainer**
- - Authform
- 
 **NavBar**
- * 
+ * SearchContainer
+ 
+ 
+|Path  | Component  |
+|------|------------|
+| "/" | "NavBar" |
