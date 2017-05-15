@@ -1,5 +1,7 @@
 ## Component Hierarchy
 
 **AuthFormContainer**
- * Authform
- * this
+ - Authform
+ 
+**NavBar**
+ * 
