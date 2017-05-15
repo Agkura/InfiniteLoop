@@ -35,6 +35,6 @@
 | "/trending" | "TrendingQuestions" |
 | "/:username" | "UserQuestionIndexContainer" |
 | "/questions/:questionId" | "QuestionShowContainer" |
-| "/:questionId" | "AnswersContainer" |
-| "/:questionId" | "AnswerDetail" |
-| "/:questionId" | "AnswerForm" |
+| "/question/:questionId" | "AnswersContainer" |
+| "/question/:questionId" | "AnswerDetail" |
+| "/question/:questionId" | "AnswerForm" |
