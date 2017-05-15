@@ -25,11 +25,11 @@ sufficient CSS styling:
 
 ## Design Docs
 
-[View Wireframes][wireframes]
-[Reach Components][components]
-[API Endpoints][endpoints]
-[DB Schema][schema]
-[Sample State][state]
+* [View Wireframes][wireframes]
+* [Reach Components][components]
+* [API Endpoints][endpoints]
+* [DB Schema][schema]
+* [Sample State][state]
 
 [wireframes]: docs/wireframes
 [components]: docs/wireframes
