@@ -33,7 +33,7 @@ sufficient CSS styling:
 
 [wireframes]: wireframes
 [components]: component-hierarchy.md
-[endpoints]: api_endpoints.md
+[endpoints]: api-endpoints.md
 [schema]: schema.md
 [state]: sample-state.md
 
