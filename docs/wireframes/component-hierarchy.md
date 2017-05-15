@@ -11,14 +11,14 @@
  
 **UserProfileContainer**
  * UserQuestionIndexContainer
-  - UserQuestionDetail
+   - UserQuestionDetail
   
 **QuestionShowContainer**
  * QuestionShow
  * AnswersContainer
-  - AnswerDetail
+   - AnswerDetail
  * AnswerFormContainer
-  - AnswerForm
+   - AnswerForm
  
  
 |Path  | Component  |
