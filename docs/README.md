@@ -21,7 +21,7 @@ sufficient CSS styling:
 - [ ] Answer questions
 - [ ] Search for questions
 - [ ] Upvote / Downvote Answer
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Production README
 
 ## Design Docs
 
@@ -32,10 +32,10 @@ sufficient CSS styling:
 * [Sample State][state]
 
 [wireframes]: docs/wireframes
-[components]: docs/wireframes
+[components]: docs/component-hierarchy.md
 [endpoints]: docs/wireframes
-[schema]: docs/wireframes
-[state]: docs/wireframes
+[schema]: docs/sample-state.md
+[state]: docs/schema.md
 
 ## Implementation Timeline
 ### Phase 1: Backend Setup and Full User Auth ( 3 days )
