@@ -19,16 +19,13 @@
   
 **QuestionShowContainer**
  * QuestionShow
- * AnswersContainer
-   - AnswerDetail
- * AnswerFormContainer
-   - AnswerForm
+ * AnswerDetail
+ * AnswerForm
 ---
 ## React Routes
  
 |Path  | Component  |
 |------|------------|
-| "/" | "NavBar" |
 | "/" | "QuestionIndexContainer" |
 | "/sign-up" | "AuthFormContainer" |
 | "/log-in" | "AuthFormContainer" |
@@ -37,7 +34,7 @@
 | "/new" | "NewQuestions" |
 | "/trending" | "TrendingQuestions" |
 | "/:username" | "UserQuestionIndexContainer" |
-| "/:questionId" | "QuestionShowContainer" |
+| "/questions/:questionId" | "QuestionShowContainer" |
 | "/:questionId" | "AnswersContainer" |
 | "/:questionId" | "AnswerDetail" |
 | "/:questionId" | "AnswerForm" |
