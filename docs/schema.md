@@ -30,6 +30,6 @@ question_id     | integer   | not null, foreign key (references questions), inde
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-score           | integer   | not null
+status          | integer   | not null
 author_id       | integer   | not null, foreign key (references users), indexed
 answer_id       | integer   | not null, foreign key (references answers), indexed, unique [author_id]
