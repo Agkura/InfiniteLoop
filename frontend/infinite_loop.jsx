@@ -9,3 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 })
+
+import { createUser, fetchUser, logIn, logOut } from './util/session_util';
+
+window.createUser = createUser;
+window.fetchUser = fetchUser;
+window.logIn = logIn;
+window.logOut = logOut;
+
+window.aUser = {
+  username: "username",
+  email: "username@username",
+  password: "username"
+}
