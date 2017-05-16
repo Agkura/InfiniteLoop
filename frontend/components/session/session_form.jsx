@@ -53,7 +53,7 @@ class SessionForm extends React.Component{
         <form className="main-session-form" onSubmit={this.handleSubmit}>
           <div className="auth-tabs">
             <div className="upper-tab"><p className="tab-1">
-                <Link onClick={this.changeTab} className="link" to={"/" + nextTabValue.toLowerCase()}>{nextTabValue}</Link>
+                <Link className="link" to={"/" + nextTabValue.toLowerCase()}><button onClick={this.changeTab}>{nextTabValue}</button></Link>
             </p></div>
           <div className="lower-tab"><p className="tab-2">
             {tabValue}
