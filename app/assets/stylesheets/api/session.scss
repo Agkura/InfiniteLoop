@@ -1,3 +1,100 @@
 // Place all the styles related to the api/session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors.scss";
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 20%;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid rgba(0,0,0,0.7);
+  border-radius: 3px;
+  align-items: center;
+}
+
+.form-logo{
+  object-fit: contain;
+  width: 60%;
+  height: auto;
+  padding: 10px;
+  border-bottom: 5px solid $abisso;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.main-session-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 90%;
+  height: auto;
+}
+
+.flex-1 {
+  border-left: 3px solid rgba(3,22,52,0.7);
+  border-top: 3px solid rgba(3,22,52,0.7);
+  border-right: 3px solid rgba(3,22,52,0.7);
+  box-sizing: border-box;
+  font-size: 70%;
+  padding: 3px;
+  flex: 1;
+  text-align: center;
+}
+
+.flex-2 {
+  flex: 3;
+}
+
+.main-session-form input:last-of-type {
+  border-radius: 3px;
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+.main-session-form input {
+  margin-bottom: 15px;
+  border: 2px solid rgba(3,22,52,0.7);
+  font-size: 80%;
+  padding: 4px;
+}
+
+.title-block {
+  display: flex;
+}
+
+.auth-tabs{
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-1 {
+  text-align: center;
+  border-right: 2px solid $abisso;
+  border-left: 2px solid $abisso;
+  border-top: 2px solid $abisso;
+  width: 33%;
+}
+
+.tab-2 {
+  width: 33%;
+  border-right: 2px solid $abisso;
+  border-left: 2px solid $abisso;
+  border-bottom: 2px solid $abisso;
+  text-align: center;
+}
+
+.upper-tab{
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2px solid $abisso;
+}
+
+.lower-tab{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}

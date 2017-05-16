@@ -1,0 +1,20 @@
+@import "api/colors.scss";
+
+header, body, div, ul, li, img, h1, input, p{
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  list-style: none;
+
+  background: transparent;
+  font-size: 100%;
+  font: inherit;
+
+  border-radius: 3px;
+}
+
+.main {
+  display: flex;
+  justify-content: flex-end;
+}

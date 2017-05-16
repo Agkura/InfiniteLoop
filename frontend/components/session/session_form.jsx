@@ -13,21 +13,37 @@ class SessionForm extends React.Component{
   render(){
     return(
       <div className="session-form">
-        <img className="form-logo"></img>
-        <ul className="main-session-form">
+        <img src={logo} className="form-logo"></img>
+        <form className="main-session-form">
+          <div className="auth-tabs">
+            <div className="upper-tab"><p className="tab-1">Login</p></div>
+            <div className="lower-tab"><p className="tab-2">Signin</p></div>
+          </div>
+          <div className="title-block">
+            <p className="flex-1">Username</p><p className="flex-2"></p>
+          </div>
           <input type="text"
                  value={this.state.username}
-                 placeholder="Username">
+                 placeholder="e.g. hackreactor">
           </input>
+          <div className="title-block">
+            <p className="flex-1">Email</p><p className="flex-2"></p>
+          </div>
          <input type="text"
                 value={this.state.email}
-                placeholder="Email">
+                placeholder="e.g. stack@overflow.com">
          </input>
+         <div className="title-block">
+           <p className="flex-1">Password</p><p className="flex-2"></p>
+         </div>
          <input type="password"
                 value={this.state.password}
-                placeholder="Password">
+                placeholder="e.g. !password">
          </input>
-        </ul>
+         <input type="submit"
+                value="Submit">
+         </input>
+       </form>
       </div>
     );
   }
