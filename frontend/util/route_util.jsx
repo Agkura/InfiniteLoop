@@ -22,9 +22,20 @@ const Protected = ( { component: Component, path, loggedIn } ) => (
     )} />
 );
 
+const Base = ( { component: Component, path, loggedIn } ) => (
+  <Route path={path} render={ ( props ) => (
+      loggedIn ? (
+        <Redirect to="/profile" />
+      ) : (
+        <Component {...props} />
+      )
+    )} />
+);
+
 const mapStateToProps = ( state ) => {
   return {loggedIn: Boolean(state.session.currentUser)};
 }
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
+export const BaseRoute = withRouter(connect(mapStateToProps, null)(Base));
