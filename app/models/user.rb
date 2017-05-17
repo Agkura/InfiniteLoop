@@ -13,13 +13,17 @@
 
 class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, presence: true
-  validates :username, uniqueness: true
+  validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
   attr_reader :password
+
+  has_many: :questions, class_name: :Question, foreign_key: :author_id
+  has_many: :answers, class_name: :Answer, foreign_key: :author_id
+  has_many: :votes, class_name: :Vote, foreign_key: :author_id
 
   def password=(password)
     @password = password

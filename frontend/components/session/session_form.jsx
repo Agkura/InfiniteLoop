@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import { demoUser } from '../../util/demo_util';
 import React from 'react';
 
 class SessionForm extends React.Component{
@@ -17,6 +18,7 @@ class SessionForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setLogIn = this.setLogIn.bind(this);
     this.setSignUp = this.setSignUp.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(property){
@@ -53,6 +55,11 @@ class SessionForm extends React.Component{
     this.setState({
       form: "signup"
     })
+  }
+
+  handleDemo(e){
+    e.preventDefault();
+    this.props.requestLogIn(demoUser());
   }
 
   render(){
@@ -111,6 +118,7 @@ class SessionForm extends React.Component{
                 placeholder="e.g. !password"
                 onChange={this.update("password")}>
          </input>
+         <button className="demo" onClick={this.handleDemo}>Demo</button>
          <input type="submit"
                 value="Submit">
          </input>

@@ -57,7 +57,7 @@
 .main-session-form input:last-of-type {
   border-radius: 3px;
   align-self: flex-end;
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: rgba(3,22,52,.7);
   color: white;
 }
@@ -159,4 +159,22 @@
   justify-content: flex-start;
   padding-bottom: 20px;
   opacity: 0.6;
+}
+
+.demo {
+  align-self: left;
+  position: relative;
+  top: 40px;
+  left: 15px;
+  border: 2px solid $abisso;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 80%;
+  background-color: rgba(3,22,52,.7);
+  color: white;
+  cursor: pointer;
+}
+
+.demo:hover {
+  background-color: $abisso;
 }
