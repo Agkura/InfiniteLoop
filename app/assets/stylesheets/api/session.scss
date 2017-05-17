@@ -83,34 +83,68 @@
   flex-direction: column;
 }
 
-.tab-1 {
+.tab-2 {
   text-align: center;
   border-right: 2px solid $abisso;
   border-left: 2px solid $abisso;
   border-top: 2px solid $abisso;
   width: 33%;
-  background-color: rgba(3,22,52,.7);
 }
 
-.tab-1 button{
+.tab-2 button {
+  width: 100%;
+}
+
+.tab-2-active {
+  background-color: $acqua;
+  border-radius: 0;
+}
+
+.tab-2-active button {
   color: white;
+  border-radius: 0;
 }
 
-.tab-1:hover {
+.color button {
+  width: 100%;
+  border-radius: 0;
+}
+
+.link button{
+  border-radius: 0;
   cursor: pointer;
-  background-color: $abisso;
 }
 
-.tab-1 button:hover{
-  cursor: pointer;
-}
-
-.tab-2 {
+.tab-1 {
   width: 33%;
   border-right: 2px solid $abisso;
   border-left: 2px solid $abisso;
-  border-bottom: 2px solid $abisso;
+  border-top: 2px solid $abisso;
   text-align: center;
+}
+
+.tab-1 button {
+  cursor: pointer;
+  width: 100%;
+}
+
+.color{
+  background-color: $acqua;
+  border-radius: 0;
+}
+
+.color button:hover {
+  cursor: pointer;
+}
+
+.color button {
+  color: white;
+  border-radius: 0;
+}
+
+.tab-3 {
+  text-align: left;
+  padding-top: 10px;
 }
 
 .upper-tab{
@@ -122,7 +156,7 @@
 
 .lower-tab{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding-bottom: 20px;
   opacity: 0.6;
 }

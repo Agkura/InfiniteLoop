@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import React from 'react';
 
 class SessionForm extends React.Component{
@@ -15,7 +15,8 @@ class SessionForm extends React.Component{
       credentials: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeTab = this.changeTab.bind(this);
+    this.setLogIn = this.setLogIn.bind(this);
+    this.setSignUp = this.setSignUp.bind(this);
   }
 
   update(property){
@@ -42,16 +43,22 @@ class SessionForm extends React.Component{
     }
   }
 
-  changeTab(e){
-    let newTab = this.state.form === 'login' ? 'other' : 'login';
+  setLogIn(e){
     this.setState({
-      form: newTab
-    });
+      form: "login"
+    })
+  }
+
+  setSignUp(e){
+    this.setState({
+      form: "signup"
+    })
   }
 
   render(){
+    let colorTab = this.state.form === 'login' ? "" : "color";
     let tabValue = this.state.form === 'login' ? "Login" : "Sign Up";
-    let nextTabValue = tabValue === "Login" ? "Sign Up" : "Login";
+    let contextTab = tabValue === 'Login' ? "Welcome Back" : "Create Account";
     let emailTitleBlock = (
       <div className="title-block">
         <p className="flex-1">Email</p><p className="flex-2">{this.state.emailError}</p>
@@ -71,12 +78,20 @@ class SessionForm extends React.Component{
         <img src={logo} className="form-logo"></img>
         <form className="main-session-form" onSubmit={this.handleSubmit}>
           <div className="auth-tabs">
-            <div className="upper-tab"><p className="tab-1">
-                <Link className="link" to={"/" + nextTabValue.toLowerCase()}><button onClick={this.changeTab}>{nextTabValue}</button></Link>
+
+            <div className="upper-tab">
+              <p className="tab-1">
+                <Link className={colorTab} to="/signup" ><button  onClick={this.setSignUp}>Sign up</button></Link>
+              </p>
+              <p className="tab-2">
+                <NavLink className="link" to="/login" activeClassName="tab-2-active"><button onClick={this.setLogIn}>Login</button></NavLink>
+              </p>
+            </div>
+          <div className="lower-tab">
+            <div className="tab-3"><p>
+              {contextTab}
             </p></div>
-          <div className="lower-tab"><p className="tab-2">
-            {tabValue}
-          </p></div>
+          </div>
           </div>
           <div className="title-block">
             <p className="flex-1">Username</p><p className="flex-2">{this.state.usernameError}</p>

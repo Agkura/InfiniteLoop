@@ -11,7 +11,7 @@ class Search extends React.Component{
   }
   render(){
     return(
-      <div className="search-bar">
+      <div className="search-bar nav-2">
         <input type="text"
                value={this.state.search}
                placeholder='eg "What is StackOverflow?"'
