@@ -33,7 +33,7 @@ tharen = User.create(username: "Tharen", email: "brian@tharen.com", password: "p
 end
 
 500.times do
-  Question.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(2), author_id: (1..120).to_a.sample)
+  Question.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(2), author_id: (1..117).to_a.sample)
 end
 
 1000.times do
