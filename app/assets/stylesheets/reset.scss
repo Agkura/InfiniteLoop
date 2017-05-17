@@ -1,6 +1,6 @@
 @import "api/colors.scss";
 
-header, body, div, ul, li, img, h1, input, p, link, button{
+header, body, div, ul, li, img, h1, input, p, link, button, a{
   margin: 0;
   padding: 0;
   border: 0;
@@ -17,7 +17,8 @@ header, body, div, ul, li, img, h1, input, p, link, button{
 
 .main {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .link {
