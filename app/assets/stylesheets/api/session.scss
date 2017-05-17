@@ -57,6 +57,12 @@
   border-radius: 3px;
   align-self: flex-end;
   margin-top: 20px;
+  background-color: rgba(3,22,52,.7);
+  color: white;
+}
+
+.main-session-form input:last-of-type:hover{
+  background-color: $abisso;
   cursor: pointer;
 }
 
@@ -82,10 +88,16 @@
   border-left: 2px solid $abisso;
   border-top: 2px solid $abisso;
   width: 33%;
+  background-color: rgba(3,22,52,.7);
+}
+
+.tab-1 button{
+  color: white;
 }
 
 .tab-1:hover {
   cursor: pointer;
+  background-color: $abisso;
 }
 
 .tab-1 button:hover{
@@ -111,4 +123,5 @@
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
+  opacity: 0.6;
 }
