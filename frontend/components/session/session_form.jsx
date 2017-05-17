@@ -8,7 +8,11 @@ class SessionForm extends React.Component{
       username: "",
       email: "",
       password: "",
-      form: this.props.formType
+      form: this.props.formType,
+      passwordError: "",
+      usernameError: "",
+      emailError: "",
+      credentials: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeTab = this.changeTab.bind(this);
@@ -18,9 +22,24 @@ class SessionForm extends React.Component{
     return (e) => this.setState({[property]: e.target.value})
   }
 
+  componentWillReceiveProps(nextProps){
+    if ( nextProps.errors.length > 0 ){
+      nextProps.errors.forEach( el => {
+        if ( el.indexOf("Password") >= 0){ this.setState({passwordError: el});}
+        if ( el.indexOf("Username") >= 0){ this.setState({usernameError: el});}
+        if ( el.indexOf("Email") >= 0){ this.setState({emailError: el});}
+        if ( el.indexOf("Credential") >= 0){ this.setState({usernameError: el});}
+      })
+    }
+  }
+
   handleSubmit(e){
     e.preventDefault();
-    this.props.processForm(this.state);
+    if (this.state.form === 'login'){
+      this.props.requestLogIn(this.state);
+    } else {
+      this.props.requestSignUp(this.state);
+    }
   }
 
   changeTab(e){
@@ -35,7 +54,7 @@ class SessionForm extends React.Component{
     let nextTabValue = tabValue === "Login" ? "Sign Up" : "Login";
     let emailTitleBlock = (
       <div className="title-block">
-        <p className="flex-1">Email</p><p className="flex-2"></p>
+        <p className="flex-1">Email</p><p className="flex-2">{this.state.emailError}</p>
       </div>
     );
     let emailBlock = (
@@ -60,7 +79,7 @@ class SessionForm extends React.Component{
           </p></div>
           </div>
           <div className="title-block">
-            <p className="flex-1">Username</p><p className="flex-2"></p>
+            <p className="flex-1">Username</p><p className="flex-2">{this.state.usernameError}</p>
           </div>
           <input type="text"
                  value={this.state.username}
@@ -70,7 +89,7 @@ class SessionForm extends React.Component{
           {emailTitleBlock}
           {emailBlock}
          <div className="title-block">
-           <p className="flex-1">Password</p><p className="flex-2"></p>
+           <p className="flex-1">Password</p><p className="flex-2">{this.state.passwordError}</p>
          </div>
          <input type="password"
                 value={this.state.password}

@@ -37,6 +37,6 @@ export const requestLogOut = ( ) => ( dispatch ) => {
 export const requestSignUp = ( user ) => ( dispatch ) => {
   return APIUtil.createUser(user)
   .then( ( newUser ) => dispatch(receiveLogIn( newUser )),
-         ( error ) => dispatch(receiveErrors( error ))
+         ( error ) => dispatch(receiveErrors( error.responseJSON ))
        );
 };

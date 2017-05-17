@@ -47,6 +47,10 @@
 
 .flex-2 {
   flex: 3;
+  color: red;
+  font-size: 80%;
+  align-self: flex-end;
+  text-align: right;
 }
 
 .main-session-form input:last-of-type {
