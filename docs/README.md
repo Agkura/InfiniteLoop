@@ -26,7 +26,7 @@ sufficient CSS styling:
 ## Design Docs
 
 * [View Wireframes][wireframes]
-* [Reach Components][components]
+* [React Components][components]
 * [API Endpoints][endpoints]
 * [DB Schema][schema]
 * [Sample State][state]
