@@ -14,9 +14,12 @@ class NavBar extends React.Component{
     if (this.props.loggedIn) {
       return (
         <button className="hvr-underline-from-center" onClick={this.handleLogOut}>Logout</button>
-      );
+      ) }else {
+        return (
+        <button className="hvr-underline-from-center" onClick={this.handleLogOut}>Login</button>
+        )
+      }
     }
-  }
 
   handleLogOut(e){
     this.props.requestLogOut();
