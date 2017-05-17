@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516002700) do
+ActiveRecord::Schema.define(version: 20170517071249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text     "body",        null: false
+    t.integer  "author_id",   null: false
+    t.integer  "question_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["author_id", "question_id"], name: "index_answers_on_author_id_and_question_id", unique: true, using: :btree
+    t.index ["author_id"], name: "index_answers_on_author_id", using: :btree
+    t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.text     "body",       null: false
+    t.integer  "author_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_questions_on_author_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -22,6 +42,17 @@ ActiveRecord::Schema.define(version: 20170516002700) do
     t.string   "session_token",   null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "status",     null: false
+    t.integer  "author_id",  null: false
+    t.integer  "answer_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_votes_on_answer_id", using: :btree
+    t.index ["author_id", "answer_id"], name: "index_votes_on_author_id_and_answer_id", unique: true, using: :btree
+    t.index ["author_id"], name: "index_votes_on_author_id", using: :btree
   end
 
 end
