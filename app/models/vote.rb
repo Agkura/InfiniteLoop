@@ -12,16 +12,17 @@
 
 class Vote < ApplicationRecord
   validates :status, :author_id, presence: true
+  validates :author_id, uniqueness: {scope: :answer_id}
 
   after_initialize :ensure_zero_votes
 
-  belongs_to: :answer
-  belongs_to: :author, class_name: :User, foreign_key: :author_id
+  belongs_to :answer
+  belongs_to :author, class_name: :User, foreign_key: :author_id
 
 
   private
 
   def ensure_zero_votes
-    self.status = 0;
+    self.status ||= 0;
   end
 end

@@ -12,7 +12,8 @@
 
 class Answer < ApplicationRecord
   validates :body, :author_id, :question_id, presence: true
+  validates :author_id, uniqueness: {scope: :question_id}
 
-  belongs_to: :question
-  belongs_to: :author, class_name: :User, foreign_key: :author_id
+  belongs_to :question
+  belongs_to :author, class_name: :User, foreign_key: :author_id
 end

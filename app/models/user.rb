@@ -21,9 +21,9 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many: :questions, class_name: :Question, foreign_key: :author_id
-  has_many: :answers, class_name: :Answer, foreign_key: :author_id
-  has_many: :votes, class_name: :Vote, foreign_key: :author_id
+  has_many :questions, class_name: :Question, foreign_key: :author_id
+  has_many :answers, class_name: :Answer, foreign_key: :author_id
+  has_many :votes, class_name: :Vote, foreign_key: :author_id
 
   def password=(password)
     @password = password

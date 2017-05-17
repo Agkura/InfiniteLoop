@@ -27,3 +27,19 @@ shrike = User.create(username: "Shrike", email: "garris@shrike.com", password: "
 salsolo = User.create(username: "Sal-Solo", email: "thrackan@sal-solo.com", password: "password")
 tharen = User.create(username: "Tharen", email: "brian@tharen.com", password: "password")
 ###########################################################################
+
+100.times do
+  User.create(username: Faker::Internet.unique.user_name, email: Faker::Internet.safe_email, password: Faker::Internet.password(7))
+end
+
+500.times do
+  Question.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(2), author_id: (1..120).to_a.sample)
+end
+
+1000.times do
+  answer = Answer.new()
+  until answer.valid?
+    answer = Answer.new(body: Faker::Lorem.paragraph(2), question_id: (1..500).to_a.sample, author_id: (1..120).to_a.sample)
+  end
+  answer.save
+end

@@ -43,6 +43,7 @@ group :development, :test do
   gem 'annotate'
   gem 'pry-rails'
   gem 'rb-readline'
+  gem 'faker'
 end
 
 group :development do
