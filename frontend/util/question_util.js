@@ -5,3 +5,13 @@ export const fetchQuestions = () => {
     })
   )
 }
+
+export const createQuestion = ( question ) => {
+  return (
+    $.ajax({
+      url: "/api/questions",
+      data: { question },
+      method: "POST"
+    })
+  )
+}
