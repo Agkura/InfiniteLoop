@@ -16,7 +16,7 @@ class Api::QuestionsController < ApplicationController
     @question.update_attributes(question_params)
     if @question.valid?
       @question.save
-      render :showe
+      render :show
     else
       render(
       json: @question.errors.full_messages,

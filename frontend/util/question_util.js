@@ -15,3 +15,13 @@ export const createQuestion = ( question ) => {
     })
   )
 }
+
+export const updateQuestion = ( question ) => {
+  return (
+    $.ajax({
+      url: `/api/questions/${question.id}`,
+      method: "PATCH",
+      data: { question }
+    })
+  )
+}

@@ -26,3 +26,9 @@ export const submitQuestion = ( question ) => ( dispatch ) => {
   .then( res => dispatch(receiveQuestion( res )),
          error => dispatch(receiveErrors(error.responseJSON)))
 }
+
+export const requestQuestionUpdate = ( question ) => ( dispatch ) => {
+  return QuestionUtil.updateQuestion( question )
+  .then( res => dispatch(receiveQuestion( res )),
+         error => dispatch(receiveErrors( error.responseJSON)))
+}
