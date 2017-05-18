@@ -23,7 +23,7 @@ import { demoUser } from './util/demo_util';
 import { fetchQuestions, createQuestion, updateQuestion } from './util/question_util';
 import { requestAllQuestions, submitQuestion, requestQuestionUpdate } from './actions/question_actions';
 import { fetchAnswers, createAnswer, updateAnswer } from './util/answer_util';
-import { requestAnswers, submitAnswer } from './actions/answer_actions';
+import { requestAnswers, submitAnswer, requestAnswerUpdate } from './actions/answer_actions';
 
 window.createUser = createUser;
 window.fetchUser = fetchUser;
@@ -44,6 +44,7 @@ window.updateQuestion = updateQuestion;
 window.requestQuestionUpdate = requestQuestionUpdate;
 window.updateAnswer = updateAnswer;
 window.submitAnswer = submitAnswer;
+window.requestAnswerUpdate = requestAnswerUpdate;
 
 window.aUser = {
   username: "username",

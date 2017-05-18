@@ -26,3 +26,9 @@ export const submitAnswer = ( answer ) => ( dispatch ) => {
   .then( res => dispatch(receiveAnswer( res )),
          error => dispatch(receiveErrors( error.responseJSON )))
 }
+
+export const requestAnswerUpdate = ( answer ) => ( dispatch) => {
+  return AnswerUtil.updateAnswer( answer )
+  .then ( res => dispatch(receiveAnswer( res )),
+          error => dispatch(receiveErrors( error )))
+}

@@ -88,10 +88,10 @@ class SessionForm extends React.Component{
 
             <div className="upper-tab">
               <p className="tab-1">
-                <Link className={colorTab} to="/signup" ><button  onClick={this.setSignUp}>Sign up</button></Link>
+                <Link className={colorTab} to="/signup" ><button  type="button" onClick={this.setSignUp}>Sign up</button></Link>
               </p>
               <p className="tab-2">
-                <NavLink className="link" to="/login" activeClassName="tab-2-active"><button onClick={this.setLogIn}>Login</button></NavLink>
+                <NavLink className="link" to="/login" activeClassName="tab-2-active"><button type="button" onClick={this.setLogIn}>Login</button></NavLink>
               </p>
             </div>
           <div className="lower-tab">
@@ -118,7 +118,7 @@ class SessionForm extends React.Component{
                 placeholder="e.g. !password"
                 onChange={this.update("password")}>
          </input>
-         <button className="demo" onClick={this.handleDemo}>Demo</button>
+         <button className="demo" type="button" onClick={this.handleDemo}>Demo</button>
          <input type="submit"
                 value="Submit">
          </input>
