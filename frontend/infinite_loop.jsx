@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
 import { createUser, fetchUser, logIn, logOut } from './util/session_util';
 import { requestLogIn, requestLogOut, requestSignUp } from './actions/session_actions';
 import { demoUser } from './util/demo_util';
+import { fetchQuestions } from './util/question_util';
+import { requestAllQuestions } from './actions/question_actions';
+import { fetchAnswers } from './util/answer_util';
+import { requestAnswers } from './actions/answer_actions';
 
 window.createUser = createUser;
 window.fetchUser = fetchUser;
@@ -29,6 +33,10 @@ window.requestLogIn = requestLogIn;
 window.requestLogOut = requestLogOut;
 window.requestSignUp = requestSignUp;
 window.demoUser = demoUser;
+window.fetchQuestions = fetchQuestions;
+window.requestAllQuestions = requestAllQuestions;
+window.fetchAnswers = fetchAnswers;
+window.requestAnswers = requestAnswers;
 
 window.aUser = {
   username: "username",
