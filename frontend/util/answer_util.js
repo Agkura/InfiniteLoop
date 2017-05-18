@@ -15,3 +15,13 @@ export const createAnswer = ( answer ) => {
     })
   )
 }
+
+export const updateAnswer = ( answer ) => {
+  return (
+    $.ajax({
+      url: `/api/questions/${answer.question_id}/answers/${answer.id}`,
+      method: "PATCH",
+      data: { answer }
+    })
+  )
+}

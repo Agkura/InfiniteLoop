@@ -22,8 +22,8 @@ import { requestLogIn, requestLogOut, requestSignUp } from './actions/session_ac
 import { demoUser } from './util/demo_util';
 import { fetchQuestions, createQuestion, updateQuestion } from './util/question_util';
 import { requestAllQuestions, submitQuestion, requestQuestionUpdate } from './actions/question_actions';
-import { fetchAnswers, createAnswer } from './util/answer_util';
-import { requestAnswers } from './actions/answer_actions';
+import { fetchAnswers, createAnswer, updateAnswer } from './util/answer_util';
+import { requestAnswers, submitAnswer } from './actions/answer_actions';
 
 window.createUser = createUser;
 window.fetchUser = fetchUser;
@@ -42,6 +42,8 @@ window.submitQuestion = submitQuestion;
 window.createAnswer = createAnswer;
 window.updateQuestion = updateQuestion;
 window.requestQuestionUpdate = requestQuestionUpdate;
+window.updateAnswer = updateAnswer;
+window.submitAnswer = submitAnswer;
 
 window.aUser = {
   username: "username",
