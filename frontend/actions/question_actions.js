@@ -3,6 +3,7 @@ import { receiveErrors } from './session_actions';
 
 export const RECEIVE_ALL_QUESTIONS = "RECEIVE_ALL_QUESTIONS";
 export const RECEIVE_NEW_QUESTION = "RECEIVE_NEW_QUESTION";
+export const DELETE_QUESTION = "DELETE_QUESTION";
 
 //sync
 export const receiveAllQuestions = ( questions ) => ({
@@ -12,6 +13,11 @@ export const receiveAllQuestions = ( questions ) => ({
 
 export const receiveQuestion = ( question ) => ({
   type: RECEIVE_NEW_QUESTION,
+  question
+})
+
+export const deleteQuestion = ( question ) => ({
+  type: DELETE_QUESTION,
   question
 })
 
@@ -31,4 +37,9 @@ export const requestQuestionUpdate = ( question ) => ( dispatch ) => {
   return QuestionUtil.updateQuestion( question )
   .then( res => dispatch(receiveQuestion( res )),
          error => dispatch(receiveErrors( error.responseJSON)))
+}
+
+export const requestQuestionDelete = ( id ) => ( dispatch ) => {
+  return QuestionUtil.destroyQuestion( id )
+  .then( res => dispatch(deleteQuestion( res )))
 }
