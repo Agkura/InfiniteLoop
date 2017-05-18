@@ -1,7 +1,8 @@
-export const fetchQuestions = () => {
+export const fetchQuestions = ( offset ) => {
   return (
     $.ajax({
-      url: "/api/questions"
+      url: `/api/questions`,
+      data: { offset }
     })
   )
 }

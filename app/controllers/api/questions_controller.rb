@@ -26,7 +26,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    @questions = Question.includes(:author).all.limit( params[:offset] )
     render :index
   end
 
@@ -39,6 +39,6 @@ class Api::QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :title, :author_id)
+    params.require(:question).permit(:body, :title, :author_id, :offset)
   end
 end

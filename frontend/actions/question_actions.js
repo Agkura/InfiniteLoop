@@ -22,8 +22,8 @@ export const deleteQuestion = ( question ) => ({
 })
 
 //async
-export const requestAllQuestions = () => ( dispatch ) => {
-  return QuestionUtil.fetchQuestions()
+export const requestAllQuestions = ( offset ) => ( dispatch ) => {
+  return QuestionUtil.fetchQuestions( offset )
   .then( res => dispatch(receiveAllQuestions(res)))
 }
 
