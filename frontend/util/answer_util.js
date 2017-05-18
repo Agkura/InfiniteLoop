@@ -5,3 +5,13 @@ export const fetchAnswers = ( questionId ) => {
     })
   )
 }
+
+export const createAnswer = ( answer ) => {
+  return (
+    $.ajax({
+      url: `/api/questions/${answer.question_id}/answers`,
+      method: "POST",
+      data: { answer }
+    })
+  )
+}

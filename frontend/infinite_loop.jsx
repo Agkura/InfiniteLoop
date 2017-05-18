@@ -22,7 +22,7 @@ import { requestLogIn, requestLogOut, requestSignUp } from './actions/session_ac
 import { demoUser } from './util/demo_util';
 import { fetchQuestions, createQuestion } from './util/question_util';
 import { requestAllQuestions, submitQuestion } from './actions/question_actions';
-import { fetchAnswers } from './util/answer_util';
+import { fetchAnswers, createAnswer } from './util/answer_util';
 import { requestAnswers } from './actions/answer_actions';
 
 window.createUser = createUser;
@@ -39,6 +39,7 @@ window.fetchAnswers = fetchAnswers;
 window.requestAnswers = requestAnswers;
 window.createQuestion = createQuestion;
 window.submitQuestion = submitQuestion;
+window.createAnswer = createAnswer;
 
 window.aUser = {
   username: "username",

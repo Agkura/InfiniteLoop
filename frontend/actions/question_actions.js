@@ -1,4 +1,5 @@
 import * as QuestionUtil from '../util/question_util';
+import { receiveErrors } from './session_actions';
 
 export const RECEIVE_ALL_QUESTIONS = "RECEIVE_ALL_QUESTIONS";
 export const RECEIVE_NEW_QUESTION = "RECEIVE_NEW_QUESTION";

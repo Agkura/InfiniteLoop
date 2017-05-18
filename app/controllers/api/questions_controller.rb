@@ -11,9 +11,29 @@ class Api::QuestionsController < ApplicationController
     end
   end
 
+  def update
+    @question = Question.find_by(id: params[:id])
+    @question.update_attributes(question_params)
+    if @question.valid?
+      @question.save
+      render :showe
+    else
+      render(
+      json: @question.errors.full_messages,
+      status: 422
+      )
+    end
+  end
+
   def index
     @questions = Question.all
     render :index
+  end
+
+  def destroy
+    @question = Question.find_by(id: params[:id])
+    @question.destroy
+    render :show
   end
 
   private
