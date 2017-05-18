@@ -25,3 +25,12 @@ export const updateAnswer = ( answer ) => {
     })
   )
 }
+
+export const destroyAnswer = ( questionId, id ) => {
+  return (
+    $.ajax({
+      url: `/api/questions/${questionId}/answers/${id}`,
+      method: "DELETE"
+    })
+  )
+}

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_ANSWERS, RECEIVE_NEW_ANSWER } from '../actions/answer_actions';
+import { RECEIVE_ANSWERS, RECEIVE_NEW_ANSWER, DELETE_ANSWER } from '../actions/answer_actions';
 
 const AnswersReducer = ( state = {}, action ) =>{
   let newState = merge( {}, state );
@@ -8,6 +8,9 @@ const AnswersReducer = ( state = {}, action ) =>{
       return merge(newState, {[action.answer.id]: action.answer})
     case RECEIVE_ANSWERS:
       return merge(newState, action.answers);
+    case DELETE_ANSWER:
+      delete newState[action.answer.id];
+      return newState;
     default:
       return state;
   }
