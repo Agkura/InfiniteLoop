@@ -3,6 +3,7 @@ import * as APIUtil from '../util/session_util';
 export const RECEIVE_LOGOUT = "RECEIVE_LOGOUT";
 export const RECEIVE_LOGIN = "RECEIVE_LOGIN";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 // sync
 
@@ -18,6 +19,10 @@ export const receiveLogIn = ( user ) => ({
 export const receiveErrors = ( errors ) => ({
   type: RECEIVE_ERRORS,
   errors
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 });
 
 //async

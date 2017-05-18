@@ -31,14 +31,14 @@ class SessionForm extends React.Component{
         if ( el.indexOf("Password") >= 0){ this.setState({passwordError: el});}
         if ( el.indexOf("Username") >= 0){ this.setState({usernameError: el});}
         if ( el.indexOf("Email") >= 0){ this.setState({emailError: el});}
-        if ( el.indexOf("Credential") >= 0){ this.setState({usernameError: el});}
+        if ( el.indexOf("Credential") >= 0){ this.setState({credentials: el});}
       })
     }
   }
 
   handleSubmit(e){
     e.preventDefault();
-    if (this.state.form === 'login'){
+    if (this.props.formType === 'login'){
       this.props.requestLogIn(this.state);
     } else {
       this.props.requestSignUp(this.state);
@@ -46,15 +46,19 @@ class SessionForm extends React.Component{
   }
 
   setLogIn(e){
-    this.setState({
-      form: "login"
-    })
+    this.props.clearErrors();
+    this.setState({passwordError: "",
+    usernameError: "",
+    emailError: "",
+    credentials: ""});
   }
 
   setSignUp(e){
-    this.setState({
-      form: "signup"
-    })
+    this.props.clearErrors();
+    this.setState({passwordError: "",
+    usernameError: "",
+    emailError: "",
+    credentials: ""});
   }
 
   handleDemo(e){
@@ -63,12 +67,12 @@ class SessionForm extends React.Component{
   }
 
   render(){
-    let colorTab = this.state.form === 'login' ? "" : "color";
-    let tabValue = this.state.form === 'login' ? "Login" : "Sign Up";
+    let colorTab = this.props.formType === 'login' ? "" : "color";
+    let tabValue = this.props.formType === 'login' ? "Login" : "Sign Up";
     let contextTab = tabValue === 'Login' ? "Welcome Back" : "Create Account";
     let emailTitleBlock = (
       <div className="title-block">
-        <p className="flex-1">Email</p><p className="flex-2">{this.state.emailError}</p>
+        <p className="flex-1">Email</p><p className="flex-2"></p>
       </div>
     );
     let emailBlock = (
@@ -95,33 +99,39 @@ class SessionForm extends React.Component{
               </p>
             </div>
           <div className="lower-tab">
-            <div className="tab-3"><p>
-              {contextTab}
-            </p></div>
+            <div className="tab-3">
+              <p>{contextTab}</p>
+              <p className="error">{this.state.credentials}</p>
+            </div>
           </div>
           </div>
           <div className="title-block">
-            <p className="flex-1">Username</p><p className="flex-2">{this.state.usernameError}</p>
+            <p className="flex-1">Username</p><p className="flex-2"></p>
           </div>
           <input type="text"
                  value={this.state.username}
                  placeholder="e.g. hackreactor"
                  onChange={this.update("username")}>
           </input>
+          <p className="error">{this.state.usernameError}</p>
           {emailTitleBlock}
           {emailBlock}
+          <p className="error">{this.state.emailError}</p>
          <div className="title-block">
-           <p className="flex-1">Password</p><p className="flex-2">{this.state.passwordError}</p>
+           <p className="flex-1">Password</p><p className="flex-2"></p>
          </div>
          <input type="password"
                 value={this.state.password}
                 placeholder="e.g. !password"
                 onChange={this.update("password")}>
          </input>
-         <button className="demo" type="button" onClick={this.handleDemo}>Demo</button>
-         <input type="submit"
-                value="Submit">
-         </input>
+         <p className="error">{this.state.passwordError}</p>
+         <div className="submit-demo">
+           <button className="demo hvr-fade" type="button" onClick={this.handleDemo}>Demo</button>
+           <input type="submit"
+                  value="Submit" className="form-submit hvr-fade">
+           </input>
+         </div>
        </form>
       </div>
     );

@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_LOGOUT,
          RECEIVE_LOGIN,
-         RECEIVE_ERRORS } from '../actions/session_actions';
+         RECEIVE_ERRORS,
+         CLEAR_ERRORS } from '../actions/session_actions';
 
 import { RECEIVE_NEW_QUESTION } from '../actions/question_actions';
 
@@ -24,6 +25,9 @@ const SessionReducer = ( state = _nullSession, action ) => {
       return _nullSession;
     case RECEIVE_ERRORS:
       return merge( newSession, {errors: action.errors} );
+    case CLEAR_ERRORS:
+      newSession["errors"] = [];
+      return newSession;
     default:
       return state;
   }
