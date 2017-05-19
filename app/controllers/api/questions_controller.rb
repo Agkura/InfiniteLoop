@@ -26,7 +26,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.includes(:author).all.limit( params[:offset] )
+    @questions = Question.includes(:author).all.order(created_at: :desc).offset( params[:offset] ).limit( 20 )
     render :index
   end
 

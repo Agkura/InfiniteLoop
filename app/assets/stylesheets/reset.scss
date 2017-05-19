@@ -10,7 +10,6 @@ a, h3{
 
   background: transparent;
   font-size: 100%;
-  font: inherit;
 
   border-radius: 3px;
   text-decoration: none;
@@ -27,4 +26,9 @@ a, h3{
 .link {
   text-decoration: none;
   color: black;
+}
+
+h3 {
+  font-weight: bolder;
+  color: $acquaPro;
 }
