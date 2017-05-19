@@ -12,12 +12,12 @@ class QuestionIndex extends React.Component{
   }
 
   render(){
-    let showQuestions = Object.keys(this.props.questions).map( (key, idx) => 
+    let showQuestions = Object.keys(this.props.questions).map( (key, idx) =>
       (<QuestionDetailContainer key={idx} questionId={key} />)
     )
     return(
-      <section>
-        <div className="question-indx">
+      <section className="question-index">
+        <div className="questions">
           {showQuestions}
         </div>
       </section>
