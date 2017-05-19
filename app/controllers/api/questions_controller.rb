@@ -41,6 +41,10 @@ class Api::QuestionsController < ApplicationController
     render :index
   end
 
+  def trending
+
+  end
+
   private
 
   def question_params
