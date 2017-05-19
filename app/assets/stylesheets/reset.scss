@@ -1,6 +1,7 @@
 @import "api/colors.scss";
 
-header, body, div, ul, li, img, h1, input, p, link, button, a{
+header, body, div, ul, li, img, h1, input, p, link, button,
+a, h3{
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,12 +15,12 @@ header, body, div, ul, li, img, h1, input, p, link, button, a{
   border-radius: 3px;
   text-decoration: none;
   outline: none;
+  font-family: inherit;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
 
