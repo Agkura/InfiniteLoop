@@ -24,6 +24,7 @@ import { fetchQuestions, createQuestion, updateQuestion, destroyQuestion } from 
 import { requestAllQuestions, submitQuestion, requestQuestionUpdate, requestQuestionDelete } from './actions/question_actions';
 import { fetchAnswers, createAnswer, updateAnswer } from './util/answer_util';
 import { requestAnswers, submitAnswer, requestAnswerUpdate, requestAnswerDelete } from './actions/answer_actions';
+import { elapsed } from './util/time_util';
 
 window.createUser = createUser;
 window.fetchUser = fetchUser;
@@ -48,6 +49,7 @@ window.requestAnswerUpdate = requestAnswerUpdate;
 window.destroyQuestion = destroyQuestion;
 window.requestQuestionDelete = requestQuestionDelete;
 window.requestAnswerDelete = requestAnswerDelete;
+window.elapsed = elapsed;
 
 window.aUser = {
   username: "username",

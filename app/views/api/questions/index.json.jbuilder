@@ -1,6 +1,7 @@
 @questions.each do |question|
   json.set! question.id do
-    json.extract! question, :id, :title, :body, :created_at
+    json.extract! question, :id, :title, :body
+    json.created_at question.created_at.strftime('%F %T')
     json.authorId question.author.id
     json.username question.author.username
   end
