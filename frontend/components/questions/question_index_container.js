@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionIndex from './question_index';
-import { requestAllQuestions, requestUserQuestions } from '../../actions/question_actions';
+import { requestAllQuestions, requestUserQuestions, clearQuestions } from '../../actions/question_actions';
 
 const mapStateToProps = ( state ) => ({
   questions: state.questions,
@@ -9,7 +9,8 @@ const mapStateToProps = ( state ) => ({
 
 const mapDispatchToProps = ( dispatch ) => ({
   requestAllQuestions: ( offset ) => dispatch(requestAllQuestions( offset )),
-  requestUserQuestions: () => dispatch(requestUserQuestions())
+  requestUserQuestions: () => dispatch(requestUserQuestions()),
+  clearQuestions: dispatch(clearQuestions())
 })
 
 export default connect(

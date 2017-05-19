@@ -7,7 +7,7 @@
 }
 
 .tab-bar li button:not(.unselected) {
-  border-top: 2px solid $abisso;
+  border-top: 3px solid $terra;
   cursor: default;
 }
 
@@ -18,12 +18,14 @@
 }
 
 .selected {
-  color: $abisso;
+  color: $terra;
+  font-weight: bolder;
 }
 
 .unselected {
   color: $terra;
-  border-top: 2px solid $terra;
+  border-top: 2px solid $terraTerra;
+  font-size: 80%;
 }
 
 .hvr-sink {

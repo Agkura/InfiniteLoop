@@ -17,6 +17,14 @@ class TabIndex extends React.Component{
     }
   }
 
+  componentWillReceiveProps(nextProps){
+    if (this.props.loggedIn && !nextProps.loggedIn) {
+      this.setState({
+        selected: "0"
+      })
+    }
+  }
+
   render(){
     let keys = this.props.loggedIn ? Object.keys(this.props.tabs).sort() : Object.keys(this.props.tabs).sort().slice(0,-1);
     let active;

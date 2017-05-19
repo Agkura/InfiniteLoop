@@ -46,6 +46,13 @@ class QuestionIndex extends React.Component{
     }
   }
 
+  componentWillReceiveProps(nextProps){
+    if (this.props.loggedIn && !nextProps.loggedIn) {
+      this.props.clearQuestions;
+      this.props.requestAllQuestions( 0 );
+    }
+  }
+
 
   render(){
     let showQuestions = Object.keys(this.props.questions).reverse().map( (key, idx) =>
