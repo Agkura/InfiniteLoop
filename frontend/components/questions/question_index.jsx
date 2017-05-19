@@ -60,7 +60,9 @@ class QuestionIndex extends React.Component{
               <i className="fa fa-chevron-left" aria-hidden="true"></i>
             </button>
             <TabIndex tabs={this.state.tabs} loggedIn={this.props.loggedIn}/>
-            <button onClick={this.handleNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
+            <button onClick={this.handleNext}>
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
           </div>
           {showQuestions}
           <div className="questions-list-navigation">

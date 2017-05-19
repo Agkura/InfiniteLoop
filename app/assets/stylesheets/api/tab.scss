@@ -1,5 +1,45 @@
 @import 'colors.scss';
 
+.tab-bar {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.tab-bar li button:not(.unselected) {
+  border-top: 2px solid $abisso;
+  cursor: default;
+}
+
+.tab-bar li button {
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 0 10px;
+}
+
 .selected {
+  color: $abisso;
+}
+
+.unselected {
   color: $terra;
+  border-top: 2px solid $terra;
+}
+
+.hvr-sink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
 }

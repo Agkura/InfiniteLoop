@@ -6,7 +6,11 @@
 
 .question-index {
   flex: 3;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
   box-sizing: border-box;
   padding: 5px;
   border-radius: 3px;
@@ -82,10 +86,20 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  box-sizing: border-box;
+}
+
+.nav-center {
+  flex: 5;
+  width: 100%;
 }
 
 .questions-list-navigation button{
   cursor: pointer;
+  flex: 1;
+  align-self: flex-start;
 }
 
 .questions-list-navigation:first-child {
