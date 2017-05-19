@@ -51,11 +51,15 @@ class QuestionIndex extends React.Component{
       <section className="question-index">
 
         <div className="questions">
-          <button onClick={this.handleNext}>next</button>
-          <button onClick={this.handleBack}>back</button>
+          <div className="questions-list-navigation">
+            <button onClick={this.handleBack}>back</button>
+            <button onClick={this.handleNext}>next</button>
+          </div>
           {showQuestions}
-          <button onClick={this.handleNext}>next</button>
-          <button onClick={this.handleBack}>back</button>
+          <div className="questions-list-navigation">
+            <button onClick={this.handleBack}>back</button>
+            <button onClick={this.handleNext}>next</button>
+          </div>
         </div>
       </section>
     )

@@ -77,3 +77,13 @@
 
 .question-fill-lower{
 }
+
+.questions-list-navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.questions-list-navigation:first-child {
+  border-bottom: 2px solid $terraTerra;
+}
