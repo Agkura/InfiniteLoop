@@ -22,7 +22,7 @@ class ElapsedTime extends React.Component{
   }
 
   componentWillUnmount(){
-    this.intervalId.clearInterval();
+    clearInterval(this.intervalId);
   }
 
   render(){

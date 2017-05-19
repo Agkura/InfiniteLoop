@@ -35,3 +35,11 @@ export const destroyQuestion = ( questionId ) => {
     })
   )
 }
+
+export const userQuestions = () => {
+  return (
+    $.ajax({
+      url: '/api/questions/user_questions'
+    })
+  )
+}

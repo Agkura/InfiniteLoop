@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import QuestionDetailContainer from './question_detail_container';
+// import TabIndex from './tab_index';
 
 class QuestionIndex extends React.Component{
   constructor(props){
@@ -52,13 +53,17 @@ class QuestionIndex extends React.Component{
 
         <div className="questions">
           <div className="questions-list-navigation">
-            <button onClick={this.handleBack}>back</button>
-            <button onClick={this.handleNext}>next</button>
+            <button onClick={this.handleBack}>
+              <i className="fa fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button onClick={this.handleNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
           </div>
           {showQuestions}
           <div className="questions-list-navigation">
-            <button onClick={this.handleBack}>back</button>
-            <button onClick={this.handleNext}>next</button>
+            <button onClick={this.handleBack}>
+              <i className="fa fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button onClick={this.handleNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
           </div>
         </div>
       </section>

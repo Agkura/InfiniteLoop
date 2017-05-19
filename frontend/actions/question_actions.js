@@ -43,3 +43,8 @@ export const requestQuestionDelete = ( id ) => ( dispatch ) => {
   return QuestionUtil.destroyQuestion( id )
   .then( res => dispatch(deleteQuestion( res )))
 }
+
+export const requestUserQuestions = () => ( dispatch ) => {
+  return QuestionUtil.userQuestions()
+  .then( res => dispatch(receiveAllQuestions( res )))
+}

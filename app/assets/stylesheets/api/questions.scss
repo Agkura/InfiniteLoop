@@ -84,6 +84,22 @@
   width: 100%;
 }
 
+.questions-list-navigation button{
+  cursor: pointer;
+}
+
 .questions-list-navigation:first-child {
   border-bottom: 2px solid $terraTerra;
+}
+
+.fa-chevron-left, .fa-chevron-right {
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+
+.fa-chevron-left:hover, .fa-chevron-left:focus, .fa-chevron-left:active,
+ .fa-chevron-right:hover, .fa-chevron-right:focus, .fa-chevron-right:active,{
+  color: $terra;
 }

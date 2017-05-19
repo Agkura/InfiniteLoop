@@ -36,6 +36,11 @@ class Api::QuestionsController < ApplicationController
     render :show
   end
 
+  def user_questions
+    @questions = Question.includes(:author).where('author_id = ?', current_user.id)
+    render :index
+  end
+
   private
 
   def question_params
