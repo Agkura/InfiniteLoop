@@ -1,6 +1,7 @@
 import React from 'react';
 import { elapsed } from '../../util/time_util';
 import ElapsedTime from './elapsed_time';
+import { Link } from 'react-router-dom';
 
 class QuestionDetail extends React.Component{
   constructor(props){
@@ -8,7 +9,7 @@ class QuestionDetail extends React.Component{
   }
 
   render(){
-    let { title, username, created_at } = this.props.question;
+    let { title, username, created_at, id } = this.props.question;
     return(
       <div className="question-bar ">
         <div className="upvote-block">
@@ -16,7 +17,7 @@ class QuestionDetail extends React.Component{
         </div>
         <div className="question-grid">
           <ul className="question-upper">
-            <li className="question-title"><h3>{title}</h3></li>
+            <li className="question-title"><h3><Link to={"/questions/" + id} >{title}</Link></h3></li>
           </ul>
           <ul className="question-lower">
             <li className="question-fill-lower"></li>

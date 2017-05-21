@@ -85,9 +85,9 @@ class SessionForm extends React.Component{
     emailTitleBlock = tabValue === "Sign Up" ? emailTitleBlock : ( <p></p>);
     emailBlock = tabValue === "Sign Up" ? emailBlock : ( <p></p>);
     return(
-      <div className="session-form">
+      <div className="form">
         <img src={logo} className="form-logo"></img>
-        <form className="main-session-form" onSubmit={this.handleSubmit}>
+        <form className="main-form" onSubmit={this.handleSubmit}>
           <div className="auth-tabs">
 
             <div className="upper-tab">

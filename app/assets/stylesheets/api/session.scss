@@ -4,7 +4,7 @@
 
 @import "colors.scss";
 
-.session-form {
+.form {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -29,7 +29,7 @@
   margin-bottom: 15px;
 }
 
-.main-session-form {
+.main-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -56,7 +56,7 @@
   text-align: right;
 }
 
-.main-session-form input {
+.main-form input {
   margin-bottom: 5px;
   border: 2px solid rgba(3,22,52,0.7);
   font-size: 80%;
