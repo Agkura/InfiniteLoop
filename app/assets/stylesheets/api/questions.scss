@@ -96,10 +96,19 @@
   width: 100%;
 }
 
-.questions-list-navigation button{
+.questions-list-navigation button {
+  cursor: pointer;
+}
+
+.questions-list-navigation:last-child button{
   cursor: pointer;
   flex: 1;
   align-self: flex-start;
+  border: 1px solid rgba(232,221,203,0.5);
+}
+
+.questions-list-navigation:last-child button:hover{
+  color: $terra;
 }
 
 .questions-list-navigation:first-child {

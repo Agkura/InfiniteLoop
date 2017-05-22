@@ -23,6 +23,30 @@ class QuestionIndex extends React.Component{
     this.handleBack = this.handleBack.bind(this);
   }
 
+  componentWillMount(){
+    let offset = Math.abs(this.state.page * 20);
+    this.props.requestAllQuestions( offset );
+  }
+
+  componentWillUpdate( _ , nextState ){
+    let currentKeys = "";
+    let userQuestions = " ";
+    if (this.props.loggedIn) {
+      currentKeys = JSON.stringify(Object.keys(this.props.questions).map( el => parseInt(el)));
+      userQuestions = JSON.stringify(this.props.userQuestions);
+    }
+    if (this.state.page !== nextState.page  && currentKeys !== userQuestions){
+      this.props.requestAllQuestions( Math.abs(nextState.page * 20));
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.loggedIn && !nextProps.loggedIn) {
+      this.props.clearQuestions;
+      this.props.requestAllQuestions( 0 );
+    }
+  }
+
   handleNext(e){
     this.setState({
       page: this.state.page + 1
@@ -35,23 +59,6 @@ class QuestionIndex extends React.Component{
     })
   }
 
-  componentWillMount(){
-    let offset = Math.abs(this.state.page * 20);
-    this.props.requestAllQuestions( offset );
-  }
-
-  componentWillUpdate( _ , nextState ){
-    if (this.state.page !== nextState.page){
-      this.props.requestAllQuestions( Math.abs(nextState.page * 20));
-    }
-  }
-
-  componentWillReceiveProps(nextProps){
-    if (this.props.loggedIn && !nextProps.loggedIn) {
-      this.props.clearQuestions;
-      this.props.requestAllQuestions( 0 );
-    }
-  }
 
 
   render(){
@@ -63,20 +70,16 @@ class QuestionIndex extends React.Component{
 
         <div className="questions">
           <div className="questions-list-navigation">
-            <button onClick={this.handleBack}>
-              <i className="fa fa-chevron-left" aria-hidden="true"></i>
-            </button>
             <TabIndex tabs={this.state.tabs} loggedIn={this.props.loggedIn}/>
-            <button onClick={this.handleNext}>
-              <i className="fa fa-chevron-right" aria-hidden="true"></i>
-            </button>
           </div>
           {showQuestions}
           <div className="questions-list-navigation">
             <button onClick={this.handleBack}>
               <i className="fa fa-chevron-left" aria-hidden="true"></i>
             </button>
-            <button onClick={this.handleNext}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
+            <button onClick={this.handleNext}>
+              <i className="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
           </div>
         </div>
       </section>
