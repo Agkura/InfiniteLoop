@@ -22,9 +22,9 @@ export const elapsed = ( milliseconds ) => {
   if ( minutes === 0) { minutes = "" };
   if ( hours === 0) { hours = "" };
   if ( seconds < 60 && minutes === undefined) { return `${seconds} ${second} ago`;}
-  if ( minutes < 60 && hours === undefined) { return `${minutes} ${minute} and ${seconds} ${second} ago`;}
-  if ( hours <= 24 && days === undefined) { return `${hours} ${hour} ${minutes} ${minute} and ${seconds} ${second} ago`;}
-  return `${days} ${day} ${hours} ${hour} ${minutes} ${minute} ${seconds} ${second} ago`;
+  if ( minutes < 60 && hours === undefined) { return `${minutes} ${minute} ago`;}
+  if ( hours <= 24 && days === undefined) { return `${hours} ${hour} ago`;}
+  return `${days} ${day} ${hours} ${hour} ago`;
 }
 
 const setPlural = ( seconds, minutes, hours, days ) => {

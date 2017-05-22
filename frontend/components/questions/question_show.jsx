@@ -15,16 +15,17 @@ class QuestionShow extends React.Component{
     values = Boolean(this.props.question) ? this.props.question : {
       title: "",
       username: "",
-      body: ""
+      body: "",
+      created: ""
     }
-    let { title, username, body } = values;
+    let { title, username, body, createdAt} = values;
     return(
       <section className="question-show">
         <div className="question-show-block">
           <ul className="question-show-items">
-            <li><h2>{title}</h2></li>
-            <li>{body}</li>
-            <li>{username}</li>
+            <li className="title"><h2>{title}</h2></li>
+            <li className="body">{body}</li>
+            <li className="username">{username}</li>
           </ul>
         </div>
         <AnswerIndexContainer />
