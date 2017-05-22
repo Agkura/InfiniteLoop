@@ -22,9 +22,9 @@ class QuestionShow extends React.Component{
       <section className="question-show">
         <div className="question-show-block">
           <ul className="question-show-items">
-            <li>{title}</li>
-            <li>{username}</li>
+            <li><h2>{title}</h2></li>
             <li>{body}</li>
+            <li>{username}</li>
           </ul>
         </div>
         <AnswerIndexContainer />

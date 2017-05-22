@@ -5,8 +5,6 @@ import AnswerIndex from './answer_index';
 
 const mapStateToProps = ( state, { match } ) => {
   return ({
-    junk2: console.log(state.answers),
-    junk: console.log(match.params.questionId),
     questionId: match.params.questionId,
     answers: state.answers
   })

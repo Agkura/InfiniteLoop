@@ -14,7 +14,6 @@ class AnswerIndex extends React.Component{
     let answerDetails = Object.keys(this.props.answers).map( (key, idx) => (
       <AnswerDetailContainer key={idx} answer={this.props.answers[key]} questionId={this.props.questionId} />
     ))
-    console.log(Object.keys(this.props.answers))
     return(
       <section className="answer-block">
         <div className="answer-index">
