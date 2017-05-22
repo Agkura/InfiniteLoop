@@ -17,9 +17,9 @@ class QuestionIndex extends React.Component{
           content: "Your Questions",
           action: this.props.requestUserQuestions
         }
-      }
-    },
-    tab: "all"
+      },
+      tab: "all"
+    }
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
   }
