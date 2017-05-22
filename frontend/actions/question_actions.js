@@ -58,3 +58,8 @@ export const requestTrendingQuestions = ( offset ) => ( dispatch ) => {
   return QuestionUtil.trendingQuestions( offset )
   .then( res => dispatch(receiveAllQuestions( res )))
 }
+
+export const requestQuestion = ( id ) => ( dispatch ) => {
+  return QuestionUtil.fetchQuestion( id )
+  .then( res => dispatch(receiveAllQuestions( res )))
+}

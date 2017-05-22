@@ -5,14 +5,25 @@ class QuestionShow extends React.Component{
     super(props);
   }
 
+  componentWillMount(){
+    this.props.requestQuestion(this.props.questionId)
+  }
+
   render(){
+    let values;
+    values = Boolean(this.props.question) ? this.props.question : {
+      title: "",
+      username: "",
+      body: ""
+    }
+    let { title, username, body } = values;
     return(
       <section className="question-show">
         <div className="question-show-block">
           <ul className="question-show-items">
-            <li>{this.props.question.title}</li>
-            <li>{this.props.question.username}</li>
-            <li>{this.props.question.body}</li>
+            <li>{title}</li>
+            <li>{username}</li>
+            <li>{body}</li>
           </ul>
         </div>
       </section>

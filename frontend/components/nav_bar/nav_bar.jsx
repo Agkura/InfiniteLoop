@@ -13,7 +13,9 @@ class NavBar extends React.Component{
   logoutOption(){
     if (this.props.loggedIn) {
       return (
-        <button className="hvr-underline-from-center nav-3" onClick={this.handleLogOut}>Logout</button>
+        <button className="hvr-underline-from-center nav-3" onClick={this.handleLogOut}>
+          <Link to="/" >Logout</Link>
+        </button>
       ) }else {
         return (
           <p className="nav-3"></p>

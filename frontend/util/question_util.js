@@ -53,3 +53,11 @@ export const trendingQuestions = ( offset ) => {
     })
   )
 }
+
+export const fetchQuestion = ( id ) => {
+  return (
+    $.ajax({
+      url: `/api/questions/${id}`
+    })
+  )
+}

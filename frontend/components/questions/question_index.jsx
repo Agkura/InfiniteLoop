@@ -30,6 +30,7 @@ class QuestionIndex extends React.Component{
   }
 
   componentWillMount(){
+    this.props.clearQuestions();
     let offset = Math.abs(this.state.page * 20);
     this.props.requestAllQuestions( offset );
   }
@@ -46,10 +47,11 @@ class QuestionIndex extends React.Component{
 
   componentWillReceiveProps(nextProps){
     if (this.props.loggedIn && !nextProps.loggedIn) {
-      this.props.clearQuestions;
+      this.props.clearQuestions();
       this.props.requestAllQuestions( 0 );
     }
   }
+
 
   handleNext(e){
     this.setState({

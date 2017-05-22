@@ -9,7 +9,13 @@ class QuestionDetail extends React.Component{
   }
 
   render(){
-    let { title, username, created_at, id } = this.props.question;
+    let values;
+    if (Boolean(this.props.question)){
+      values = this.props.question;
+    } else {
+      values = { title: "", username: "", created_at: "", id: ""};
+    }
+    let { title, username, created_at, id } =  values;
     return(
       <div className="question-bar ">
         <div className="upvote-block">
