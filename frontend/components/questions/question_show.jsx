@@ -1,4 +1,5 @@
 import React from 'react';
+import AnswerIndexContainer from '../answers/answer_index_container';
 
 class QuestionShow extends React.Component{
   constructor(props){
@@ -26,6 +27,7 @@ class QuestionShow extends React.Component{
             <li>{body}</li>
           </ul>
         </div>
+        <AnswerIndexContainer />
       </section>
     )
   }

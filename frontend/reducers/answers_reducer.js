@@ -3,11 +3,13 @@ import { RECEIVE_ANSWERS, RECEIVE_NEW_ANSWER, DELETE_ANSWER } from '../actions/a
 
 const AnswersReducer = ( state = {}, action ) =>{
   let newState = merge( {}, state );
+  console.log(action.type);
+  console.log(action.answers);
   switch(action.type){
     case RECEIVE_NEW_ANSWER:
       return merge(newState, {[action.answer.id]: action.answer})
     case RECEIVE_ANSWERS:
-      return merge(newState, action.answers);
+      return merge({}, action.answers);
     case DELETE_ANSWER:
       delete newState[action.answer.id];
       return newState;
