@@ -42,7 +42,12 @@ class Api::QuestionsController < ApplicationController
   end
 
   def trending
-
+    @questions = Question.joins(:answers)
+                         .select('questions.* count(answers) as answer_count')
+                         .group(:id).order('answer_count desc')
+                         .offset( params[:offset] )
+                         .limit(20)
+    render :index
   end
 
   private
