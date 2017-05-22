@@ -14,12 +14,12 @@ class QuestionIndex extends React.Component{
           action: this.props.requestAllQuestions
         },
         1: {
-          content: "Your Questions",
-          action: this.props.requestUserQuestions
-        },
-        2: {
           content: "Trending",
           action: this.props.requestTrendingQuestions
+        },
+        2: {
+          content: "Your Questions",
+          action: this.props.requestUserQuestions
         }
       },
       tab: "Most Recent"

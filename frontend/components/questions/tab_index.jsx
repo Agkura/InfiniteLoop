@@ -30,7 +30,7 @@ class TabIndex extends React.Component{
     let keys = this.props.loggedIn ? Object.keys(this.props.tabs).sort() : Object.keys(this.props.tabs).sort().slice(0,-1);
     let active;
     let tabs = keys.sort().map ( (key, idx) => {
-      active = this.state.selected === key ? "selected" : "unselected hvr-sink";
+      active = this.state.selected === key ? "selected" : "unselected hvr-grow";
       return(
         <li key={idx}>
           <button className={active} onClick={this.handleAction(this.props.tabs[key].action, key, this.props.tabs[key].content)}>

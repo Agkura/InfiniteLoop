@@ -68,7 +68,7 @@ class QuestionForm extends React.Component{
                    value={this.state.body}>
             </input>
             <p className="error">{this.state.bodyError}</p>
-            <input type="submit" value="Ask" />
+            <input className="form-submit hvr-fade" type="submit" value="Ask" />
           </form>
       </aside>
     )

@@ -16,7 +16,7 @@ const mapDispatchToProps = ( dispatch ) => ({
   requestAllQuestions: ( offset ) => dispatch(requestAllQuestions( offset )),
   requestUserQuestions: ( offset ) => dispatch(requestUserQuestions( offset )),
   requestTrendingQuestions: ( offset ) => dispatch(requestTrendingQuestions( offset )),
-  clearQuestions: dispatch(clearQuestions())
+  clearQuestions: dispatch(clearQuestions)
 })
 
 export default connect(

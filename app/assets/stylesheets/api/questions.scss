@@ -86,7 +86,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 23px;
   padding-top: 15px;
   box-sizing: border-box;
 }
@@ -109,6 +109,7 @@
 
 .questions-list-navigation:last-child button:hover{
   color: $terra;
+  background-color: rgba(232, 221, 203, 0.5);
 }
 
 .questions-list-navigation:first-child {
