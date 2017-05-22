@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 import { createUser, fetchUser, logIn, logOut } from './util/session_util';
 import { requestLogIn, requestLogOut, requestSignUp } from './actions/session_actions';
 import { demoUser } from './util/demo_util';
-import { fetchQuestions, createQuestion, updateQuestion, destroyQuestion, userQuestions } from './util/question_util';
-import { requestAllQuestions, submitQuestion, requestQuestionUpdate, requestQuestionDelete, requestUserQuestions } from './actions/question_actions';
+import { fetchQuestions, createQuestion, updateQuestion, destroyQuestion, userQuestions, trendingQuestions } from './util/question_util';
+import { requestAllQuestions, submitQuestion, requestQuestionUpdate, requestQuestionDelete, requestUserQuestions, requestTrendingQuestions } from './actions/question_actions';
 import { fetchAnswers, createAnswer, updateAnswer } from './util/answer_util';
 import { requestAnswers, submitAnswer, requestAnswerUpdate, requestAnswerDelete } from './actions/answer_actions';
 import { elapsed } from './util/time_util';
@@ -52,6 +52,8 @@ window.requestAnswerDelete = requestAnswerDelete;
 window.elapsed = elapsed;
 window.userQuestions = userQuestions;
 window.requestUserQuestions = requestUserQuestions;
+window.trendingQuestions = trendingQuestions;
+window.requestTrendingQuestions = requestTrendingQuestions;
 
 window.aUser = {
   username: "username",

@@ -16,12 +16,17 @@ class QuestionIndex extends React.Component{
         1: {
           content: "Your Questions",
           action: this.props.requestUserQuestions
+        },
+        2: {
+          content: "Trending",
+          action: this.props.requestTrendingQuestions
         }
       },
-      tab: "all"
+      tab: "Most Recent"
     }
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
+    this.handler = this.handler.bind(this);
   }
 
   componentWillMount(){
@@ -30,14 +35,12 @@ class QuestionIndex extends React.Component{
   }
 
   componentWillUpdate( _ , nextState ){
-    let currentKeys = "";
-    let userQuestions = " ";
-    if (this.props.loggedIn) {
-      currentKeys = JSON.stringify(Object.keys(this.props.questions).map( el => parseInt(el)));
-      userQuestions = JSON.stringify(this.props.userQuestions);
-    }
-    if (this.state.page !== nextState.page  && currentKeys !== userQuestions){
+    if (this.state.page !== nextState.page  && nextState.tab === "Most Recent"){
       this.props.requestAllQuestions( Math.abs(nextState.page * 20));
+    } else if(this.state.page !== nextState.page  && nextState.tab === "Trending"){
+      this.props.requestTrendingQuestions( Math.abs(nextState.page * 20));
+    } else if(this.state.page !== nextState.page && nextState.tab === "Your Questions"){
+      this.props.requestUserQuestions( Math.abs(nextState.page * 20));
     }
   }
 
@@ -60,6 +63,10 @@ class QuestionIndex extends React.Component{
     })
   }
 
+  handler(tab){
+    this.setState({ tab: tab, page: 0})
+  }
+
 
 
   render(){
@@ -71,7 +78,7 @@ class QuestionIndex extends React.Component{
 
         <div className="questions">
           <div className="questions-list-navigation">
-            <TabIndex tabs={this.state.tabs} loggedIn={this.props.loggedIn}/>
+            <TabIndex tabs={this.state.tabs} loggedIn={this.props.loggedIn} handler={this.handler}/>
           </div>
           {showQuestions}
           <div className="questions-list-navigation">
