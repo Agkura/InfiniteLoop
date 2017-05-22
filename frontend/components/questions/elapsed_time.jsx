@@ -11,10 +11,8 @@ class ElapsedTime extends React.Component{
   }
 
   findElapsed(){
-    let made = new Date(this.props.created.split(" ").join("T"));
-    let current = new Date();
-    let newTime = Math.abs(current-made);
-    this.setState({time: elapsed(newTime)});
+    let made = this.props.created;
+    this.setState({time: elapsed(made)});
   }
 
   componentDidMount(){
