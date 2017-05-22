@@ -10,12 +10,20 @@ a, h3{
 
   background: transparent;
   font-size: 100%;
-
+  outline: none;
   border-radius: 3px;
   text-decoration: none;
-  outline: $terraTerra;
   font-family: inherit;
   color: inherit;
+}
+
+input:focus {
+  box-shadow: 0 1px rgba(3, 101, 100, 0.8) inset, 0 0 7px rgba(3, 101, 100, 1);
+  outline: 0 none;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
 }
 
 .main {

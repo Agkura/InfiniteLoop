@@ -7,13 +7,36 @@ class QuestionForm extends React.Component{
     this.state = {
       title: "",
       body: "",
-      author_id: this.props.id
+      author_id: this.props.id,
+      titleError: "",
+      bodyError: ""
     };
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.submitQuestion(this.state);
+    this.props.clearErrors();
+    this.props.submitQuestion(this.state)
+    .then(() => this.setState({
+      title: "",
+      body: "",
+      author_id: this.props.id,
+      titleError: "",
+      bodyError: ""
+    }));
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      titleError: "",
+      bodyError: ""
+    })
+    if ( nextProps.errors.length > 0 ){
+      nextProps.errors.forEach( el => {
+        if ( el.indexOf("Title") >= 0){ this.setState({titleError: el});}
+        if ( el.indexOf("Body") >= 0){ this.setState({bodyError: el});}
+      })
+    }
   }
 
   update(property){
@@ -35,6 +58,7 @@ class QuestionForm extends React.Component{
                    onChange={this.update("title")}
                    value={this.state.title}>
             </input>
+            <p className="error">{this.state.titleError}</p>
             <div className="title-block">
               <p className="flex-1">Body</p><p className="flex-2"></p>
             </div>
@@ -43,6 +67,7 @@ class QuestionForm extends React.Component{
                    onChange={this.update("body")}
                    value={this.state.body}>
             </input>
+            <p className="error">{this.state.bodyError}</p>
             <input type="submit" value="Ask" />
           </form>
       </aside>

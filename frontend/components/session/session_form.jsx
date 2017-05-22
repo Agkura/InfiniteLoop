@@ -26,6 +26,12 @@ class SessionForm extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
+    this.setState({
+      passwordError: "",
+      usernameError: "",
+      emailError: "",
+      credentials: ""
+    })
     if ( nextProps.errors.length > 0 ){
       nextProps.errors.forEach( el => {
         if ( el.indexOf("Password") >= 0){ this.setState({passwordError: el});}

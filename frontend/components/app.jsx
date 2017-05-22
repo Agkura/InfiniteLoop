@@ -4,13 +4,14 @@ import React from 'react';
 import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import QuestionIndexContainer from './questions/question_index_container';
+import QuestionFormContainer from './questions/question_form_container';
 
 const App = () =>(
   <div className="main">
     <Route path="/" component={NavBarContainer}></Route>
     <div className="center">
-      <Route path="/" component={QuestionIndexContainer} />
-      <BaseRoute component={SessionFormContainer} path="/"/>
+      <Route path="/" component={QuestionIndexContainer}  />
+      <BaseRoute component={SessionFormContainer} altComponent={QuestionFormContainer} path="/"/>
     </div>
   </div>
 )
