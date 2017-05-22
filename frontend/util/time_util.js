@@ -1,4 +1,4 @@
-export const elapsed = ( createdAt ) => {
+export const elapsed = ( createdAt, boolean = true ) => {
   let creationTime = new Date(createdAt.split(" ").join("T"));
   let current = new Date();
   let milliseconds = Math.abs(current-creationTime);
@@ -25,7 +25,8 @@ export const elapsed = ( createdAt ) => {
   if ( seconds === 0) { seconds = "" };
   if ( minutes === 0) { minutes = "" };
   if ( hours === 0) { hours = "" };
-  if ( seconds < 60 && minutes === undefined) { return `${seconds} ${second} ago`;}
+  if ( seconds < 60 && minutes === undefined && boolean) { return `${seconds} ${second} ago`;}
+  if ( seconds < 60 && minutes === undefined && !boolean) { return `a few seconds ago`;}
   if ( minutes < 60 && hours === undefined) { return `${minutes} ${minute} ago`;}
   if ( hours <= 24 && days === undefined) { return `${hours} ${hour} ago`;}
   if (days > 7) { return createdAt.split(" ").first }

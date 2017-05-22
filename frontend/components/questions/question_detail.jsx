@@ -13,9 +13,9 @@ class QuestionDetail extends React.Component{
     if (Boolean(this.props.question)){
       values = this.props.question;
     } else {
-      values = { title: "", username: "", created_at: "", id: ""};
+      values = { title: "", username: "", createdAt: "", id: ""};
     }
-    let { title, username, created_at, id } =  values;
+    let { title, username, createdAt, id } =  values;
     return(
       <div className="question-bar ">
         <div className="upvote-block">
@@ -27,7 +27,7 @@ class QuestionDetail extends React.Component{
           </ul>
           <ul className="question-lower">
             <li className="question-fill-lower"></li>
-            <li className="question-created-at"><ElapsedTime created={created_at} /></li>
+            <li className="question-created-at"><ElapsedTime created={createdAt} /></li>
             <li className="question-username">{username}</li>
           </ul>
         </div>

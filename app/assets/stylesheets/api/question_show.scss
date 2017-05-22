@@ -26,8 +26,50 @@
 .question-show-items {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+}
+
+.username-time {
+  align-self: flex-end;
+  display: flex;
+  font-family: 'Fira Mono', monospace;
+  align-items: flex-end;
+  margin: 25px 0;
+  flex-direction: column;
+}
+
+.time {
+  font-size: 75%;
 }
 
 .username {
-  align-self: flex-end;
+  text-align: right;
+  margin-top: 15px;
+}
+
+.edit-delete:hover {
+  cursor: pointer;
+  color: $terra;
+}
+
+.off {
+  visibility: hidden;
+}
+
+.edit-dropdown {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 1px solid black;
+  right: 10px;
+  top: 55px;
+}
+
+.active {
+  color: $terra;
 }
