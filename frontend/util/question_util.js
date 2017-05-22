@@ -36,10 +36,20 @@ export const destroyQuestion = ( questionId ) => {
   )
 }
 
-export const userQuestions = () => {
+export const userQuestions = ( offset ) => {
   return (
     $.ajax({
-      url: '/api/questions/user_questions'
+      url: '/api/questions/user_questions',
+      data: { offset }
+    })
+  )
+}
+
+export const trendingQuestions = ( offset ) => {
+  return (
+    $.ajax({
+      url: '/api/questions/trending',
+      data: { offset }
     })
   )
 }

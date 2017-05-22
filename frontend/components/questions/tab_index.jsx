@@ -8,11 +8,12 @@ class TabIndex extends React.Component{
     }
   }
 
-  handleAction(property, key){
+  handleAction(property, key, contentName){
     return (e) => {
       this.setState({
         selected: key
-      })
+      });
+      this.props.handler(contentName);
       property();
     }
   }
@@ -32,7 +33,7 @@ class TabIndex extends React.Component{
       active = this.state.selected === key ? "selected" : "unselected hvr-sink";
       return(
         <li key={idx}>
-          <button className={active} onClick={this.handleAction(this.props.tabs[key].action, key)}>
+          <button className={active} onClick={this.handleAction(this.props.tabs[key].action, key, this.props.tabs[key].content)}>
             {this.props.tabs[key].content}
           </button>
         </li>
