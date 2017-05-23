@@ -40,7 +40,7 @@ export const submitQuestion = ( question ) => ( dispatch ) => {
 
 export const requestQuestionUpdate = ( question ) => ( dispatch ) => {
   return QuestionUtil.updateQuestion( question )
-  .then( res => dispatch(receiveQuestion( res )),
+  .then( res => dispatch(receiveAllQuestions( res )),
          error => dispatch(receiveErrors( error.responseJSON)))
 }
 

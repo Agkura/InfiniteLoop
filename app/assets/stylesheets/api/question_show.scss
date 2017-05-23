@@ -60,8 +60,9 @@
 }
 
 .title-bar i {
-  padding-right: 10px;
+  padding-left: 10px;
   align-self: flex-start;
+  margin-top: 20px;
 }
 
 .off {
@@ -69,12 +70,78 @@
 }
 
 .edit-dropdown {
-  width: 100px;
-  height: 100px;
   position: absolute;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  background-color: $terraTerra;
+  color: $abisso;
+  box-shadow: 5px 5px 10px 1px rgba(3, 22, 5, 0.5);
+}
+
+.edit-dropdown p:hover {
+  background-color: $abisso;
+  color: white;
+}
+
+.edit-dropdown p {
+  padding: 5px 15px;
+}
+
+.edit-dropdown div button {
+  padding: 5px 15px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.edit-dropdown div button:hover{
+  background-color: $abisso;
+  color: white;
 }
 
 .active {
   color: $terra;
+}
+
+// .edit-modal {
+//   position: absolute;
+//   top: 40px;
+//   right: 40px;
+//   left: 40px;
+//   bottom: 40px;
+//   border: 1px solid black;
+//   overflow: auto;
+//   padding: 20px;
+//   height: 100px;
+//   width: 100px;
+// }
+//
+// .edit-modal-overlay{
+//   position: fixed;
+//   top: 50px;
+//   bottom: 50px;
+//   right: 50px;
+//   left: 50px;
+//   background-color: rgba(255, 255, 255, 0.75);
+// }
+
+.edit-modal-after {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: 50%;
+  left: 50%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form input {
+  margin: 10px;
+  border: 1px solid $terra;
+  padding: 3px;
 }

@@ -19,58 +19,65 @@ class EditDeleteModal extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      title: this.props.question.title,
+      body: this.props.question.body
     };
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.getParent = this.getParent.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   openModal() {
-    debugger;
+    console.log(this.state.modalIsOpen);
     this.setState({modalIsOpen: true});
+    console.log(this.state.modalIsOpen);
   }
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+    console.log("hit after");
   }
 
   closeModal() {
     this.setState({modalIsOpen: false});
   }
 
-  getParent() {
-    return document.querySelector('.edit-dropdown');
+  update(property){
+    return (e) => this.setState({[property]: e.target.value})
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    let newQuestion = {
+      title: this.state.title,
+      body: this.state.body,
+      id: this.props.question.id,
+    }
+    this.props.requestQuestionUpdate(newQuestion).then( () => this.setState({modalIsOpen: false}));
   }
 
   render(){
+    console.log(this.state.modalIsOpen);
     return(
-      <div>
+      <div className="checking">
         <button onClick={this.openModal}>Edit</button>
-      <Modal
-        isOpen={this.state.modalIsOpen}
-        onAfterOpen={this.afterOpenModal}
-        onRequestClose={this.closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-        parentSelector={this.getParent}
-      >
-
-        <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-        <button onClick={this.closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
-      </Modal>
-    </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          className="edit-modal-after"
+          contentLabel="Example Modal">
+          <form className="edit-form" onSubmit={this.handleSubmit}>
+            <input onChange={this.update("title")} type="text" value={this.state.title}></input>
+            <input onChange={this.update("body")} type="text" value={this.state.body}></input>
+            <input type="submit" value="Update" />
+          </form>
+        </Modal>
+      </div>
     )
   }
 }

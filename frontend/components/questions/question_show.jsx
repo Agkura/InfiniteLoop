@@ -21,15 +21,24 @@ class QuestionShow extends React.Component{
       title: "",
       username: "",
       body: "",
-      createdAt: ""
+      createdAt: "",
+      id: ""
     }
-    let { title, username, body, createdAt } = values;
+    let { title, username, body, createdAt, id, authorId } = values;
 
     return(
       <section className="question-show">
         <div className="question-show-block">
           <ul className="question-show-items">
-            <QuestionShowTitleBar title={title} />
+            <QuestionShowTitleBar authorId={authorId}
+                                  userId={this.props.userId}
+                                  title={title}
+                                  requestQuestionDelete={this.props.requestQuestionDelete}
+                                  id={id}
+                                  loggedIn={this.props.loggedIn}
+                                  requestQuestionUpdate={this.props.requestQuestionUpdate}
+                                  question={this.props.question}
+            />
             <li className="body">{body}</li>
             <div className="username-time">
               <li className="time"><ElapsedTime created={createdAt} /></li>

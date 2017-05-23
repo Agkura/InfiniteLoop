@@ -1,6 +1,7 @@
 import React from 'react';
 import EditDeleteModal from './edit_delete_modal';
 import onClickOutside from 'react-onclickoutside';
+import { withRouter } from 'react-router-dom';
 
 class QuestionShowTitleBar extends React.Component{
   constructor(props){
@@ -10,6 +11,8 @@ class QuestionShowTitleBar extends React.Component{
       toggleActive: "inactive"
     }
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.showDropDown = this.showDropDown.bind(this);
   }
 
   toggleEdit(e){
@@ -27,19 +30,30 @@ class QuestionShowTitleBar extends React.Component{
     })
   }
 
+  showDropDown(){
+    if (this.props.loggedIn && this.props.userId === this.props.authorId) {
+      return (
+        <i onClick={this.toggleEdit} className={"fa fa-chevron-down " + this.state.toggleActive} aria-hidden="true">
+          <div className={"edit-dropdown " + this.state.toggleEdit}>
+            <p onClick={this.handleDelete}>Delete</p>
+            <EditDeleteModal requestQuestionUpdate={this.props.requestQuestionUpdate} question={this.props.question}/>
+          </div>
+        </i>
+      )}
+  }
+
+  handleDelete(e){
+    this.props.requestQuestionDelete(this.props.id).then( () => this.props.history.push('/'));
+  }
+
   render(){
     return(
       <div className="title-bar">
-        <i onClick={this.toggleEdit} className={"fa fa-chevron-down " + this.state.toggleActive} aria-hidden="true">
-          <div className={"edit-dropdown " + this.state.toggleEdit}>
-            <p>Delete</p>
-            <EditDeleteModal />
-          </div>
-        </i>
         <li className="title"><h2>{this.props.title}</h2></li>
+        {this.showDropDown()}
       </div>
     )
   }
 }
 
-export default onClickOutside(QuestionShowTitleBar);
+export default withRouter(onClickOutside(QuestionShowTitleBar));
