@@ -61,6 +61,7 @@
 
 .title-bar i {
   padding-right: 10px;
+  align-self: flex-start;
 }
 
 .off {
@@ -70,7 +71,7 @@
 .edit-dropdown {
   width: 100px;
   height: 100px;
-  position: fixed;
+  position: absolute;
   border: 1px solid black;
 }
 

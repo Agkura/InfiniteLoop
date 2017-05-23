@@ -30,12 +30,13 @@ class QuestionShowTitleBar extends React.Component{
   render(){
     return(
       <div className="title-bar">
-        <i onClick={this.toggleEdit} className={"fa fa-chevron-down " + this.state.toggleActive} aria-hidden="true"></i>
+        <i onClick={this.toggleEdit} className={"fa fa-chevron-down " + this.state.toggleActive} aria-hidden="true">
+          <div className={"edit-dropdown " + this.state.toggleEdit}>
+            <p>Delete</p>
+            <EditDeleteModal />
+          </div>
+        </i>
         <li className="title"><h2>{this.props.title}</h2></li>
-        <div className={"edit-dropdown " + this.state.toggleEdit}>
-          <p>Delete</p>
-          <EditDeleteModal />
-        </div>
       </div>
     )
   }
