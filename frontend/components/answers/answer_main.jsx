@@ -35,9 +35,6 @@ class AnswerMain extends React.Component{
   }
 
   showDropDown(){
-    console.log(this.props.loggedIn);
-    console.log(this.props.userId);
-    console.log(this.props.authorId);
     if (this.props.loggedIn && this.props.userId === this.props.authorId) {
       return (
         <i onClick={this.toggleEdit} className={"fa fa-chevron-down " + this.state.toggleActive} aria-hidden="true">

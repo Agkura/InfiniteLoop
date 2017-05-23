@@ -56,7 +56,6 @@ class EditDeleteModal extends React.Component{
   }
 
   render(){
-    console.log(this.state.modalIsOpen);
     return(
       <div className="checking">
         <button onClick={this.openModal}>Edit</button>

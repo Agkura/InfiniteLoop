@@ -31,14 +31,11 @@ class EditDeleteModal extends React.Component{
   }
 
   openModal() {
-    console.log(this.state.modalIsOpen);
     this.setState({modalIsOpen: true});
-    console.log(this.state.modalIsOpen);
   }
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    console.log("hit after");
   }
 
   closeModal() {
@@ -60,7 +57,6 @@ class EditDeleteModal extends React.Component{
   }
 
   render(){
-    console.log(this.state.modalIsOpen);
     return(
       <div className="checking">
         <button onClick={this.openModal}>Edit</button>
