@@ -10,7 +10,7 @@
   box-sizing: border-box;
   padding: 5px;
   border-radius: 3px;
-  font-family: "Open Sans", "serif";
+  font-family: "Playfair Display", "serif";
 }
 
 .question-show-block {
@@ -39,7 +39,7 @@
 .username-time {
   align-self: flex-end;
   display: flex;
-  font-family: 'Fira Mono', monospace;
+  font-family: 'PT Serif', serif;
   align-items: flex-end;
   margin: 15px 0;
   flex-direction: column;
@@ -63,6 +63,7 @@
   padding-left: 10px;
   align-self: flex-start;
   margin-top: 20px;
+
 }
 
 .off {
