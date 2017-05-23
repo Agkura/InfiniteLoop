@@ -3,9 +3,12 @@ import { requestAnswerUpdate, requestAnswerDelete } from '../../actions/answer_a
 import AnswerDetail from './answer_detail';
 
 const mapStateToProps = ( state, ownProps ) => {
+  let userId = Boolean(state.session.currentUser) ? state.session.currentUser.id : "";
   return ({
     answer: ownProps.answer,
-    questionId: ownProps.questionId
+    questionId: ownProps.questionId,
+    loggedIn: Boolean(state.session.currentUser),
+    userId: userId
   })
 }
 
