@@ -65,6 +65,7 @@ class EditDeleteModal extends React.Component{
           style={customStyles}
           className="edit-modal-after"
           contentLabel="Answer Edit">
+          <h3>Update Answer</h3>
           <form className="edit-form" onSubmit={this.handleSubmit}>
             <div className="title-block">
               <p className="flex-1">Answer</p><p className="flex-2"></p>

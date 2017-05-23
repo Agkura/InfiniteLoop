@@ -33,13 +33,13 @@ tharen = User.create(username: "Tharen", email: "brian@tharen.com", password: "p
 end
 
 500.times do
-  Question.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(2), author_id: (1..117).to_a.sample)
+  Question.create(title: Faker::Lorem.paragraph(1, true, 5), body: Faker::Lorem.paragraph(5, true 4), author_id: (1..117).to_a.sample)
 end
 
-1000.times do
+2000.times do
   answer = Answer.new()
   until answer.valid?
-    answer = Answer.new(body: Faker::Lorem.paragraph(2), question_id: (1..500).to_a.sample, author_id: (1..120).to_a.sample)
+    answer = Answer.new(body: Faker::Lorem.paragraph(3, true, 6), question_id: (1..500).to_a.sample, author_id: (1..120).to_a.sample)
   end
   answer.save
 end
