@@ -1,5 +1,6 @@
 import React from 'react';
 import AnswerDetailContainer from './answer_detail_container';
+import AnswerForm from './answer_form';
 
 class AnswerIndex extends React.Component{
   constructor(props){
@@ -19,6 +20,7 @@ class AnswerIndex extends React.Component{
         <div className="answer-index">
           {answerDetails}
         </div>
+        <AnswerForm answers={this.props.answers} loggedIn={this.props.loggedIn} questionId={this.props.questionId} submitAnswer={this.props.submitAnswer} userId={this.props.userId}/>
       </section>
     )
   }

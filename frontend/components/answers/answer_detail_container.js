@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestAnswerUpdate, requestAnswerDelete } from '../../actions/answer_actions';
+import { requestAnswerUpdate, requestAnswerDelete, submitAnswer } from '../../actions/answer_actions';
 import AnswerDetail from './answer_detail';
 
 const mapStateToProps = ( state, ownProps ) => {

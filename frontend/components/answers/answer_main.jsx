@@ -1,6 +1,5 @@
 import React from 'react';
 import onClickOutside from 'react-onclickoutside';
-import { withRouter } from 'react-router-dom';
 import EditDeleteModalAnswer from './edit_delete_modal_answer';
 
 class AnswerMain extends React.Component{
@@ -56,4 +55,4 @@ class AnswerMain extends React.Component{
   }
 }
 
-export default withRouter(onClickOutside(AnswerMain));
+export default onClickOutside(AnswerMain);
