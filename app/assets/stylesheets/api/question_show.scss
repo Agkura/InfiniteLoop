@@ -66,7 +66,7 @@
 .title-bar i {
   padding-left: 10px;
   align-self: flex-start;
-  margin-top: 20px;
+  margin-top: 25px;
 
 }
 
@@ -81,7 +81,7 @@
   background-color: white;
   z-index: 1;
   color: $abisso;
-  box-shadow: 5px 5px 10px 1px rgba(3, 22, 5, 0.5);
+  box-shadow: 1px 1px 6px 0.5px rgba(3, 22, 5, 0.1);
 }
 
 .edit-dropdown p:hover {
@@ -146,4 +146,9 @@
   border: 3px solid rgba(3,22,52,0.7);
   font-size: 80%;
   padding: 4px;
+}
+
+.question-header {
+  display: flex;
+  justify-content: center;
 }

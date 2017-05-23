@@ -58,3 +58,7 @@
 .answer-details:nth-child(odd){
   background-color: rgba(3, 54 ,73, 0.1);
 }
+
+.answer-details .title-bar i {
+  margin-top: 0;
+}
