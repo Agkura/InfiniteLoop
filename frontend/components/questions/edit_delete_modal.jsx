@@ -6,7 +6,7 @@ const customStyles = {
   content : {
     top                   : '50%',
     left                  : '50%',
-    right                 : 'auto',
+    right                 : 'auto%',
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
@@ -68,9 +68,15 @@ class EditDeleteModal extends React.Component{
           className="edit-modal-after"
           contentLabel="Example Modal">
           <form className="edit-form" onSubmit={this.handleSubmit}>
-            <input onChange={this.update("title")} type="text" value={this.state.title}></input>
-            <input onChange={this.update("body")} type="text" value={this.state.body}></input>
-            <input type="submit" value="Update" />
+            <div className="title-block">
+              <p className="flex-1">Title</p><p className="flex-2"></p>
+            </div>
+            <input required="true" onChange={this.update("title")} type="text" value={this.state.title}></input>
+              <div className="title-block">
+                <p className="flex-1">Question</p><p className="flex-2"></p>
+              </div>
+            <textarea rows="10" required="true" onChange={this.update("body")} value={this.state.body}></textarea>
+            <input type="submit" value="Update"  />
           </form>
         </Modal>
       </div>

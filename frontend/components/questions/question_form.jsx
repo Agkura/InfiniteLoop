@@ -18,7 +18,7 @@ class QuestionForm extends React.Component{
     e.preventDefault();
     this.props.clearErrors();
     this.props.submitQuestion(this.state)
-    .then(el => this.props.history.push(`questions/${el.question.id}`))
+    .then(el => this.props.history.push(`/questions/${el.question.id}`))
     .then(() => this.setState({
       title: "",
       body: "",
@@ -64,11 +64,11 @@ class QuestionForm extends React.Component{
             <div className="title-block">
               <p className="flex-1">Body</p><p className="flex-2"></p>
             </div>
-            <input type="text"
+            <textarea rows="10"
                    placeholder="Body"
                    onChange={this.update("body")}
                    value={this.state.body}>
-            </input>
+            </textarea>
             <p className="error">{this.state.bodyError}</p>
             <input className="form-submit hvr-fade" type="submit" value="Ask" />
           </form>

@@ -6,7 +6,6 @@ const customStyles = {
   content : {
     top                   : '50%',
     left                  : '50%',
-    right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
@@ -67,7 +66,10 @@ class EditDeleteModal extends React.Component{
           className="edit-modal-after"
           contentLabel="Answer Edit">
           <form className="edit-form" onSubmit={this.handleSubmit}>
-            <input onChange={this.update("body")} type="text" value={this.state.body}></input>
+            <div className="title-block">
+              <p className="flex-1">Answer</p><p className="flex-2"></p>
+            </div>
+            <textarea width="400px" onChange={this.update("body")} rows="10" required="true" value={this.state.body}></textarea>
             <input type="submit" value="Update" />
           </form>
         </Modal>

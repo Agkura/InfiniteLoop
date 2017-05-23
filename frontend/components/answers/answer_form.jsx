@@ -41,7 +41,7 @@ class AnswerForm extends React.Component{
     let form;
     if (this.props.loggedIn && !this.answered()) {
       form = (<form className="answer-submit" onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.update("body")} value={this.state.body}></input>
+        <textarea required="true" rows="10" onChange={this.update("body")} value={this.state.body}></textarea>
         <input type="submit" value="Answer" />
       </form>)
     } else {

@@ -48,7 +48,9 @@ class AnswerMain extends React.Component{
   render(){
     return(
       <div className="title-bar">
-        <li className="answer"><h2>{this.props.body}</h2></li>
+        <li className="answer">{this.props.body.split('\n').map((item, key) => {
+                                return <span key={key}>{item}<br/></span>
+                              })}</li>
         {this.showDropDown()}
       </div>
     )

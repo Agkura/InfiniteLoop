@@ -5,22 +5,26 @@
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 30px;
-  margin-top: 30px;
+  margin-top: 20px;
 
   box-sizing: border-box;
-  padding: 5px;
   border-radius: 3px;
   font-family: "Playfair Display", "serif";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .question-show-block {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   align-items: center;
-  margin: 0 auto;
-  padding: 15px;
+  padding: 20px 30px;
   box-sizing: border-box;
+  background-color: rgba(232, 221, 203, 0.1);
+  border: 1px solid rgba(3, 22, 52, 0.2);
+  margin-bottom: 20px;
 }
 
 .question-show-items {
@@ -74,7 +78,8 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  background-color: $terraTerra;
+  background-color: white;
+  z-index: 1;
   color: $abisso;
   box-shadow: 5px 5px 10px 1px rgba(3, 22, 5, 0.5);
 }
@@ -130,19 +135,37 @@
   position: absolute;
   top: 50%;
   bottom: 50%;
-  right: 50%;
-  left: 50%;
+  right: 70%;
+  left: auto;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid rgba(3, 54, 73, 0.4);
+  padding: 20px;
+  box-shadow: 2px 3px 10px rgba(3, 22, 52, 0.3);
+}
+
+.edit-modal-after input:last-of-type{
+  margin-bottom: 1px;
+  border: 2px solid rgba(3,22,52,0.7);
+  font-size: 80%;
+  padding: 4px;
+  background-color: rgba(3,22,52,0.8);
+  color: white;
+  cursor: pointer;
+}
+
+.edit-modal-after input:last-of-type:hover {
+  background-color: $abisso;
 }
 
 .edit-form {
   display: flex;
   flex-direction: column;
+  min-width: 100px;
 }
 
-.edit-form input {
-  margin: 10px;
-  border: 1px solid $terra;
-  padding: 3px;
+.edit-form input, textarea {
+  margin-bottom: 5px;
+  border: 2px solid rgba(3,22,52,0.7);
+  font-size: 80%;
+  padding: 4px;
 }

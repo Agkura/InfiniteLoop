@@ -14,10 +14,17 @@ class QuestionShow extends React.Component{
     this.props.requestQuestion(this.props.questionId)
   }
 
+  componentWillReceiveProps(nextProps){
+    if (this.props.questionId !== nextProps.questionId) {
+      console.log("hello");
+      this.props.requestQuestion(nextProps.questionId);
+    }
+  }
+
 
   render(){
     let values;
-    values = Boolean(this.props.question) ? this.props.question : {
+    values = Boolean(this.props.question.title) ? this.props.question : {
       title: "",
       username: "",
       body: "",
@@ -25,6 +32,7 @@ class QuestionShow extends React.Component{
       id: ""
     }
     let { title, username, body, createdAt, id, authorId } = values;
+
 
     return(
       <section className="question-show">
@@ -39,7 +47,9 @@ class QuestionShow extends React.Component{
                                   requestQuestionUpdate={this.props.requestQuestionUpdate}
                                   question={this.props.question}
             />
-            <li className="body">{body}</li>
+          <li className="body">{body.split('\n').map((item, key) => {
+                                  return <span key={key}>{item}<br/></span>
+                                })}</li>
             <div className="username-time">
               <li className="time"><ElapsedTime created={createdAt} /></li>
               <li className="username">{username}</li>
