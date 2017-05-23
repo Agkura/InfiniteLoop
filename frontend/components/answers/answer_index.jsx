@@ -11,6 +11,12 @@ class AnswerIndex extends React.Component{
     this.props.requestAnswers( this.props.questionId );
   }
 
+  componentWillReceiveProps(nextProps){
+    if (this.props.questionId !== nextProps.questionId) {
+      this.props.requestAnswers(nextProps.questionId);
+    }
+  }
+
   render(){
     let answerDetails = Object.keys(this.props.answers).map( (key, idx) => (
       <AnswerDetailContainer key={idx} answer={this.props.answers[key]} questionId={this.props.questionId} />
