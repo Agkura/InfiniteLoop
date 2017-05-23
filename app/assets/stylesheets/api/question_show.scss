@@ -32,6 +32,8 @@
 .title-bar {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  height: auto;
 }
 
 .username-time {
@@ -52,9 +54,13 @@
   margin-top: 15px;
 }
 
-.edit-delete:hover {
+.fa-chevron-down:hover {
   cursor: pointer;
   color: $terra;
+}
+
+.title-bar i {
+  padding-right: 10px;
 }
 
 .off {
@@ -64,10 +70,8 @@
 .edit-dropdown {
   width: 100px;
   height: 100px;
-  position: relative;
+  position: fixed;
   border: 1px solid black;
-  right: 10px;
-  top: 55px;
 }
 
 .active {

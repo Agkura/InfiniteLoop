@@ -15,6 +15,7 @@ a, h3{
   text-decoration: none;
   font-family: inherit;
   color: inherit;
+  word-break: break-all;
 }
 
 input:focus {
@@ -46,10 +47,6 @@ h2 {
   font-weight: bolder;
   color: $abisso;
   font-size: 120%;
-}
-
-i:focus {
-  outline: 0;
 }
 
 .inactve {

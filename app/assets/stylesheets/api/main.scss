@@ -3,5 +3,6 @@
 .center{
   display: flex;
   width: 1200px;
+  overflow-wrap: break-word;
   justify-content: flex-start;
 }

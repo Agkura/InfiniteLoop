@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class QuestionForm extends React.Component{
   constructor(props){
@@ -17,6 +18,7 @@ class QuestionForm extends React.Component{
     e.preventDefault();
     this.props.clearErrors();
     this.props.submitQuestion(this.state)
+    .then(el => this.props.history.push(`questions/${el.question.id}`))
     .then(() => this.setState({
       title: "",
       body: "",
@@ -75,4 +77,4 @@ class QuestionForm extends React.Component{
   }
 }
 
-export default QuestionForm;
+export default withRouter(QuestionForm);
