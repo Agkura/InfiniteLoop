@@ -41,8 +41,14 @@ class AnswerForm extends React.Component{
     let form;
     if (this.props.loggedIn && !this.answered()) {
       form = (<form className="answer-submit" onSubmit={this.handleSubmit}>
-        <textarea required="true" rows="10" onChange={this.update("body")} value={this.state.body}></textarea>
-        <input type="submit" value="Answer" />
+      <div className="title-block">
+        <p className="flex-1">Answer</p><p className="flex-2"></p>
+      </div>
+        <textarea required="true" rows="7" onChange={this.update("body")} value={this.state.body}></textarea>
+
+          <div className="title-block">
+            <p className="flex-2"></p><input className="flex-1" type="submit" value="Answer" />
+          </div>
       </form>)
     } else {
       form = null;

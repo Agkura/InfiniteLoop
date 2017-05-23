@@ -16,7 +16,6 @@ class QuestionShow extends React.Component{
 
   componentWillReceiveProps(nextProps){
     if (this.props.questionId !== nextProps.questionId) {
-      console.log("hello");
       this.props.requestQuestion(nextProps.questionId);
     }
   }

@@ -75,6 +75,16 @@ class QuestionIndex extends React.Component{
     let showQuestions = Object.keys(this.props.questions).reverse().map( (key, idx) =>
       (<QuestionDetailContainer key={idx} questionId={key} />)
     )
+    let pages = this.state.tab !== "Your Questions" ? (
+      <div className="questions-list-navigation">
+        <button onClick={this.handleBack}>
+          <i className="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button onClick={this.handleNext}>
+          <i className="fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    ) : null;
     return(
       <section className="question-index">
 
@@ -83,14 +93,7 @@ class QuestionIndex extends React.Component{
             <TabIndex tabs={this.state.tabs} loggedIn={this.props.loggedIn} handler={this.handler}/>
           </div>
           {showQuestions}
-          <div className="questions-list-navigation">
-            <button onClick={this.handleBack}>
-              <i className="fa fa-chevron-left" aria-hidden="true"></i>
-            </button>
-            <button onClick={this.handleNext}>
-              <i className="fa fa-chevron-right" aria-hidden="true"></i>
-            </button>
-          </div>
+          {pages}
         </div>
       </section>
     )
