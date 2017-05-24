@@ -36,7 +36,7 @@
 .title-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: auto;
 }
 
@@ -66,9 +66,8 @@
 .title-bar i {
   padding-left: 10px;
   align-self: flex-start;
-  margin-top: 25px;
-
 }
+
 
 .off {
   visibility: hidden;

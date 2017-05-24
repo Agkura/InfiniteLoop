@@ -11,7 +11,8 @@ class QuestionShow extends React.Component{
   }
 
   componentWillMount(){
-    this.props.requestQuestion(this.props.questionId)
+    this.props.clearQuestions();
+    this.props.requestQuestion(this.props.questionId);
   }
 
   componentWillReceiveProps(nextProps){

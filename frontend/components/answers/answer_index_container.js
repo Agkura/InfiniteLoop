@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestAnswers } from '../../actions/answer_actions';
+import { requestAnswers, submitAnswer } from '../../actions/answer_actions';
 import { withRouter } from 'react-router-dom';
 import AnswerIndex from './answer_index';
 

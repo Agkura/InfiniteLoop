@@ -1,7 +1,7 @@
 @import "api/colors.scss";
 
 header, body, div, ul, li, img, h1, input, p, link, button,
-a, h3{
+a, h3, span{
   margin: 0;
   padding: 0;
   border: 0;
@@ -15,7 +15,7 @@ a, h3{
   text-decoration: none;
   font-family: inherit;
   color: inherit;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 input:focus {
