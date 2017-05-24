@@ -4,6 +4,7 @@ import { receiveErrors } from './session_actions';
 export const RECEIVE_ANSWERS = "RECEIVE_ANSWERS";
 export const RECEIVE_NEW_ANSWER = "RECEIVE_NEW_ANSWER";
 export const DELETE_ANSWER = "DELETE_ANSWER";
+export const CLEAR_ANSWERS = "CLEAR_ANSWERS";
 
 //sync
 export const receiveAnswers = ( answers ) => ({
@@ -19,6 +20,10 @@ export const receiveAnswer = ( answer ) => ({
 export const deleteAnswer = ( answer ) => ({
   type: DELETE_ANSWER,
   answer
+})
+
+export const clearAnswers = () => ({
+  type: CLEAR_ANSWERS
 })
 
 //async

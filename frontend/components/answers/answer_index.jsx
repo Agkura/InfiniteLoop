@@ -17,6 +17,10 @@ class AnswerIndex extends React.Component{
     }
   }
 
+  componentWillUnmount(){
+    this.props.clearAnswers();
+  }
+
   render(){
     let answerDetails = Object.keys(this.props.answers).map( (key, idx) => (
       <AnswerDetailContainer key={idx} answer={this.props.answers[key]} questionId={this.props.questionId} />

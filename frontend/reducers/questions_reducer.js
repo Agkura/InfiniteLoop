@@ -6,10 +6,9 @@ import { RECEIVE_SEARCH_RESULTS } from '../actions/search_actions';
 
 const QuestionsReducer = ( state = {}, action ) => {
   let newState = merge({}, state);
-  console.log(action);
   switch(action.type){
     case RECEIVE_NEW_QUESTION:
-      return Object.assign(newState, {[action.question.id]: action.question})
+      return Object.assign(newState, action.question)
     case RECEIVE_ALL_QUESTIONS:
       return merge({}, action.questions);
     case DELETE_QUESTION:

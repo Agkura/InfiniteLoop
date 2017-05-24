@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestAnswers, submitAnswer } from '../../actions/answer_actions';
+import { requestAnswers, submitAnswer, clearAnswers } from '../../actions/answer_actions';
 import { withRouter } from 'react-router-dom';
 import AnswerIndex from './answer_index';
 
@@ -18,7 +18,8 @@ const mapStateToProps = ( state, { match } ) => {
 const mapDispatchToProps = ( dispatch ) => {
   return ({
     requestAnswers: ( id ) => dispatch(requestAnswers( id )),
-    submitAnswer: ( newAnswer ) => dispatch(submitAnswer( newAnswer ))
+    submitAnswer: ( newAnswer ) => dispatch(submitAnswer( newAnswer )),
+    clearAnswers: () => dispatch(clearAnswers())
   })
 }
 

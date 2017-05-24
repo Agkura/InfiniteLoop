@@ -19,6 +19,6 @@ class Answer < ApplicationRecord
   has_many :votes
 
   def vote_count
-    self.votes.map { | vote | vote.score }.inject(:+)
+    self.votes.map { | vote | vote.status }.inject(:+)
   end
 end
