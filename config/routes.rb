@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :questions, except: [:new] do
       resources :answers, except: [:new]
     end
+    resources :votes, only: [:create, :edit]
+    resources :question_votes, only: [:create, :edit]
 
   end
 end

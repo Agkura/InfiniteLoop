@@ -111,12 +111,10 @@
   cursor: pointer;
   flex: 1;
   align-self: flex-start;
-  border: 1px solid rgba(232,221,203,0.5);
 }
 
 .questions-list-navigation:last-child button:hover{
   color: $terra;
-  background-color: rgba(232, 221, 203, 0.5);
 }
 
 .questions-list-navigation:first-child {
