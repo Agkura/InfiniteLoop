@@ -39,7 +39,7 @@ end
 2000.times do
   answer = Answer.new()
   until answer.valid?
-    answer = Answer.new(body: Faker::Lorem.paragraph(3, true, 6), question_id: (1..500).to_a.sample, author_id: (1..120).to_a.sample)
+    answer = Answer.new(body: Faker::Lorem.paragraph(3, true, 6), question_id: (1..500).to_a.sample, author_id: (1..117).to_a.sample)
   end
   answer.save
 end

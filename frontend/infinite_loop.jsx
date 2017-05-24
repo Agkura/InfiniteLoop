@@ -29,6 +29,7 @@ import { fetchAnswers, createAnswer, updateAnswer } from './util/answer_util';
 import { requestAnswers, submitAnswer, requestAnswerUpdate, requestAnswerDelete } from './actions/answer_actions';
 import { elapsed } from './util/time_util';
 import { searchQuery } from './util/search_util';
+import { requestSearchResults } from './actions/search_actions';
 
 window.createUser = createUser;
 window.fetchUser = fetchUser;
@@ -59,6 +60,7 @@ window.requestUserQuestions = requestUserQuestions;
 window.trendingQuestions = trendingQuestions;
 window.requestTrendingQuestions = requestTrendingQuestions;
 window.searchQuery = searchQuery;
+window.requestSearchResults = requestSearchResults;
 
 window.aUser = {
   username: "username",
