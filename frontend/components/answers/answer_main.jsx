@@ -39,7 +39,7 @@ class AnswerMain extends React.Component{
         <i onClick={this.toggleEdit} className={"fa fa-chevron-down " + this.state.toggleActive} aria-hidden="true">
           <div className={"edit-dropdown " + this.state.toggleEdit}>
             <p onClick={this.handleDelete}>Delete</p>
-            <EditDeleteModalAnswer questionId={this.props.questionId} requestAnswerUpdate={this.props.requestAnswerUpdate} answer={this.props.answer}/>
+            <EditDeleteModalAnswer questionAuthorId={this.props.questionAuthorId} questionId={this.props.questionId} requestAnswerUpdate={this.props.requestAnswerUpdate} answer={this.props.answer}/>
           </div>
         </i>
       )}

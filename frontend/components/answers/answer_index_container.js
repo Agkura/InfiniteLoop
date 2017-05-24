@@ -9,7 +9,8 @@ const mapStateToProps = ( state, { match } ) => {
     questionId: match.params.questionId,
     answers: state.answers,
     loggedIn: Boolean(state.session.currentUser),
-    userId: userId
+    userId: userId,
+    questionAuthorId: state.questions.authorId
   })
 }
 

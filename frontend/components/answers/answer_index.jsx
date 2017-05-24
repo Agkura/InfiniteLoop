@@ -26,7 +26,7 @@ class AnswerIndex extends React.Component{
         <div className="answer-index">
           {answerDetails}
         </div>
-        <AnswerForm answers={this.props.answers} loggedIn={this.props.loggedIn} questionId={this.props.questionId} submitAnswer={this.props.submitAnswer} userId={this.props.userId}/>
+        <AnswerForm questionAuthorId={this.props.questionAuthorId} answers={this.props.answers} loggedIn={this.props.loggedIn} questionId={this.props.questionId} submitAnswer={this.props.submitAnswer} userId={this.props.userId}/>
       </section>
     )
   }
