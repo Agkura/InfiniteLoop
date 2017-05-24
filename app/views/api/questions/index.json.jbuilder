@@ -5,5 +5,11 @@
     json.authorId question.author_id
     json.username question.author.username
     json.votes question.vote_count
+    if current_user && question.question_votes.map{ |vote| vote.author_id }.include?( current_user.id )
+      voted =  true
+    else
+      voted = false
+    end
+    json.voted voted
   end
 end
