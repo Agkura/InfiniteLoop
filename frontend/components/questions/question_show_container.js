@@ -7,7 +7,7 @@ const mapStateToProps = ( state, { match } ) => {
   let userId = Boolean(state.session.currentUser) ? state.session.currentUser.id : "";
   return ({
     questionId: match.params.questionId,
-    question: state.questions,
+    question: state.questions[[Object.keys(state.questions)[0]]],
     loggedIn: Boolean(state.session.currentUser),
     userId: userId
   })

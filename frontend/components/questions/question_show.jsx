@@ -23,7 +23,7 @@ class QuestionShow extends React.Component{
 
   render(){
     let values;
-    values = Boolean(this.props.question.title) ? this.props.question : {
+    values = Boolean(this.props.question) ? this.props.question : {
       title: "",
       username: "",
       body: "",

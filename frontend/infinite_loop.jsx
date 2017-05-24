@@ -30,8 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // import { elapsed } from './util/time_util';
 import { searchQuery } from './util/search_util';
 import { requestSearchResults } from './actions/search_actions';
-import { voteAnswer, voteQuestion, changeAnswerVote, changeQuestionVote } from './util/vote_util';
+// import { voteAnswer, voteQuestion, changeAnswerVote, changeQuestionVote } from './util/vote_util';
+import { createAnswerVote, createQuestionVote, changeQuestionVote, changeAnswerVote } from './actions/vote_actions';
 
+window.createAnswerVote = createAnswerVote;
+window.createQuestionVote = createQuestionVote;
+window.changeQuestionVote = changeQuestionVote;
+window.changeAnswerVote = changeAnswerVote;
 // window.createUser = createUser;
 // window.fetchUser = fetchUser;
 // window.logIn = logIn;
@@ -60,9 +65,9 @@ import { voteAnswer, voteQuestion, changeAnswerVote, changeQuestionVote } from '
 // window.requestUserQuestions = requestUserQuestions;
 // window.trendingQuestions = trendingQuestions;
 // window.requestTrendingQuestions = requestTrendingQuestions;
-window.searchQuery = searchQuery;
-window.requestSearchResults = requestSearchResults;
-window.voteAnswer = voteAnswer;
-window.voteQuestion = voteQuestion;
-window.changeAnswerVote = changeAnswerVote;
-window.changeQuestionVote = changeQuestionVote;
+// window.searchQuery = searchQuery;
+// window.requestSearchResults = requestSearchResults;
+// window.voteAnswer = voteAnswer;
+// window.voteQuestion = voteQuestion;
+// window.changeAnswerVote = changeAnswerVote;
+// window.changeQuestionVote = changeQuestionVote;

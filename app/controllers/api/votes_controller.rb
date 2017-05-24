@@ -1,8 +1,9 @@
 class Api::VotesController < ApplicationController
 
   def create
-    @vote = Vote.new(vote_params)
-    if @vote.save
+    vote = Vote.new(vote_params)
+    if vote.save
+      @answer = vote.answer
       render :show
     else
       render(
@@ -13,10 +14,11 @@ class Api::VotesController < ApplicationController
   end
 
   def edit
-    @vote = Vote.find_by(id: params[:id])
-    @vote.update_attributes(vote_params)
-    if @vote.valid?
-      @vote.save
+    vote = Vote.find_by(answer_id: params[:vote][:answer_id], author_id: params[:vote][:author_id])
+    vote.update_attributes(vote_params)
+    if vote.valid?
+      vote.save
+      @answer = vote.answer
       render :show
     else
       render(

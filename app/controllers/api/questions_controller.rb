@@ -26,7 +26,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.includes(:author).all.order(created_at: :desc).offset( params[:offset] ).limit( 20 )
+    @questions = Question.includes(:author, :question_votes).all.order(created_at: :desc).offset( params[:offset] ).limit( 20 )
     render :index
   end
 
@@ -37,12 +37,12 @@ class Api::QuestionsController < ApplicationController
   end
 
   def user_questions
-    @questions = Question.includes(:author).where('author_id = ?', current_user.id).offset( params[:offset] ).limit( 20 )
+    @questions = Question.includes(:author, :question_votes).where('author_id = ?', current_user.id).offset( params[:offset] ).limit( 20 )
     render :index
   end
 
   def trending
-      @questions = Question.includes( :author )
+      @questions = Question.includes( :author, :question_votes )
                            .joins( :answers )
                            .select('questions.*, count(answers) as answer_count')
                            .group( :id )

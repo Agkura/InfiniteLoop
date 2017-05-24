@@ -27,7 +27,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def index
-    @answers = Answer.includes(:author).where('answers.question_id = ?', params[:question_id])
+    @answers = Answer.includes(:author, :votes).where('answers.question_id = ?', params[:question_id])
     render :index
   end
 

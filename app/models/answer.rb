@@ -16,5 +16,9 @@ class Answer < ApplicationRecord
 
   belongs_to :question
   belongs_to :author, class_name: :User, foreign_key: :author_id
-  has_many :answer_votes
+  has_many :votes
+
+  def vote_count
+    self.votes.map { | vote | vote.score }.inject(:+)
+  end
 end

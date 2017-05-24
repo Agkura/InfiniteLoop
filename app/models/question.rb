@@ -21,4 +21,8 @@ class Question < ApplicationRecord
   def answer_count
     self.answers.count
   end
+
+  def vote_count
+    self.question_votes.map { | qvote | qvote.score }.inject(:+)
+  end
 end

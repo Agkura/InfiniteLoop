@@ -8,7 +8,7 @@ const QuestionsReducer = ( state = {}, action ) => {
   let newState = merge({}, state);
   switch(action.type){
     case RECEIVE_NEW_QUESTION:
-      return merge(newState, {[action.question.id]: action.question})
+      return Object.assign(newState, {[action.question.id]: action.question})
     case RECEIVE_ALL_QUESTIONS:
       return merge({}, action.questions);
     case DELETE_QUESTION:

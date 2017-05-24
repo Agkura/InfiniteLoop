@@ -13,7 +13,7 @@ class Api::QuestionVotesController < ApplicationController
   end
 
   def edit
-    @question_vote = QuestionVote.find_by(id: params[:id])
+    @question_vote = QuestionVote.find_by(question_id: params[:question_vote][:question_id], author_id: params[:question_vote][:author_id])
     @question_vote.update_attributes(question_vote_params)
     if @question_vote.valid?
       @question_vote.save
