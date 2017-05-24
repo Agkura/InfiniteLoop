@@ -1,7 +1,7 @@
 class Api::SearchController < ApplicationController
 
   def search
-    search_query = "%" << params[:search].downcase << "%"
+    search_query = "%" << params[:query].downcase << "%"
     @questions = Question.includes(:author)
                  .where('title LIKE ? OR body LIKE ?', search_query, search_query)
                  .limit(20)

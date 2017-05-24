@@ -1,4 +1,4 @@
-json.set! questions do
+json.set! :questions do
   @questions.each do |question|
     json.set! question.id do
       json.extract! question, :id, :title, :body
@@ -9,7 +9,7 @@ json.set! questions do
   end
 end
 
-json.set! answers do
+json.set! :answers do
   @answers.each do |answer|
     json.set! answer.id do
       json.extract! answer, :id, :body
