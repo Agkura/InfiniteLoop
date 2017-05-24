@@ -11,7 +11,7 @@
 #
 
 class Vote < ApplicationRecord
-  validates :status, :author_id, presence: true
+  validates :status, :answer_id, presence: true
   validates :author_id, uniqueness: {scope: :answer_id}
 
   after_initialize :ensure_zero_votes
