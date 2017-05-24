@@ -7,7 +7,7 @@ class Api::QuestionVotesController < ApplicationController
       render :show
     else
       render(
-      json: ["Error"],
+      json: question_vote.errors.full_messages,
       status: 422
       )
     end
@@ -22,7 +22,7 @@ class Api::QuestionVotesController < ApplicationController
       render :show
     else
       render(
-      json: ["Error"],
+      json: question_vote.errors.full_messages,
       status: 422
       )
     end

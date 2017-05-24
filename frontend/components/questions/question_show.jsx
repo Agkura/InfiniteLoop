@@ -3,6 +3,7 @@ import { elapsed } from '../../util/time_util';
 import AnswerIndexContainer from '../answers/answer_index_container';
 import ElapsedTime from './elapsed_time';
 import QuestionShowTitleBar from './question_show_title_bar';
+import QuestionVoteContainer from '../votes/question_vote_container';
 
 
 class QuestionShow extends React.Component{
@@ -38,6 +39,7 @@ class QuestionShow extends React.Component{
       <section className="question-show">
         <div className="question-show-block">
           <ul className="question-show-items">
+            <QuestionVoteContainer question={this.props.question} />
             <QuestionShowTitleBar authorId={authorId}
                                   userId={this.props.userId}
                                   title={title}

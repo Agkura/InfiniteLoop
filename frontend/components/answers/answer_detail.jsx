@@ -1,6 +1,7 @@
 import React from 'react';
 import ElapsedTime from '../questions/elapsed_time';
 import AnswerMain from './answer_main';
+import AnswerVoteContainer from '../votes/answer_vote_container';
 
 class AnswerDetail extends React.Component{
   constructor(props){
@@ -20,6 +21,7 @@ class AnswerDetail extends React.Component{
 
     return(
       <ul className="answer-details">
+        <AnswerVoteContainer answer={this.props.answer} />
         <AnswerMain answer={this.props.answer}
                     body={body}
                     authorId={authorId}

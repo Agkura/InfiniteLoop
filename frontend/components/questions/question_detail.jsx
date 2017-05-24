@@ -2,6 +2,7 @@ import React from 'react';
 import { elapsed } from '../../util/time_util';
 import ElapsedTime from './elapsed_time';
 import { Link } from 'react-router-dom';
+import QuestionVoteContainer from '../votes/question_vote_container';
 
 class QuestionDetail extends React.Component{
   constructor(props){
@@ -18,6 +19,7 @@ class QuestionDetail extends React.Component{
     let { title, username, createdAt, id } =  values;
     return(
       <div className="question-bar ">
+        <QuestionVoteContainer question={this.props.question} />
         <div className="upvote-block">
 
         </div>

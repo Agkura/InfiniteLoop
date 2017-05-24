@@ -1,16 +1,25 @@
 import { connect } from 'react-redux';
-import { }
+import { createQuestionVote, changeQuestionVote } from '../../actions/vote_actions';
+import QuestionVote from './question_vote';
 
 const mapStateToProps = ( state, ownProps) => {
-  return ({
+  let userId = Boolean(state.session.currentUser) ? state.session.currentUser.id : "";
+  let question = ownProps.question === undefined ? {} : ownProps.question;
+  return {
     loggedIn: Boolean(state.session.currentUser),
-    userId: state.session.currentUser.id,
-    quesstion: ownProps.question
-  })
+    userId: userId,
+    question: question
+  }
 }
 
-const mapDispatchToProps = ( dispathc ) => {
+const mapDispatchToProps = ( dispatch ) => {
   return ({
-
+    createQuestionVote: ( newVote ) => dispatch(createQuestionVote( newVote )),
+    changeQuestionVote: ( editVote ) => dispatch(changeQuestionVote( editVote ))
   })
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuestionVote);
