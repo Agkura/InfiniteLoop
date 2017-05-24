@@ -39,7 +39,9 @@ class AnswerForm extends React.Component{
 
   render(){
     let form;
-    if (this.props.loggedIn && !this.answered() && this.props.userId !== this.props.questionAuthorId) {
+    if (this.props.questionAuthorId === "" || !this.props.loggedIn || this.answered() || this.props.userId === this.props.questionAuthorId) {
+      form = null;
+    } else {
       form = (<form className="answer-submit" onSubmit={this.handleSubmit}>
       <div className="title-block">
         <p className="flex-1">Answer</p><p className="flex-2"></p>
@@ -50,8 +52,6 @@ class AnswerForm extends React.Component{
             <p className="flex-2"></p><input className="flex-1" type="submit" value="Answer" />
           </div>
       </form>)
-    } else {
-      form = null;
     }
     return(
       <div>

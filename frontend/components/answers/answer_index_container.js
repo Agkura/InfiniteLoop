@@ -5,12 +5,13 @@ import AnswerIndex from './answer_index';
 
 const mapStateToProps = ( state, { match } ) => {
   let userId = Boolean(state.session.currentUser) ? state.session.currentUser.id : "";
+  let questionAuthorId = Object.keys(state.questions).length > 0 ? state.questions[Object.keys(state.questions)[0]].authorId : "";
   return ({
     questionId: match.params.questionId,
     answers: state.answers,
     loggedIn: Boolean(state.session.currentUser),
     userId: userId,
-    questionAuthorId: state.questions.authorId
+    questionAuthorId: questionAuthorId
   })
 }
 
