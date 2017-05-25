@@ -4,7 +4,6 @@ import { RECEIVE_SEARCH_RESULTS } from '../actions/search_actions';
 
 const AnswersReducer = ( state = {}, action ) =>{
   let newState = merge( {}, state );
-  console.log(action);
   switch(action.type){
     case RECEIVE_NEW_ANSWER:
       return merge(newState, {[action.answer.id]: action.answer})

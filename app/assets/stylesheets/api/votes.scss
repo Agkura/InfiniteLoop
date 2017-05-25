@@ -11,8 +11,109 @@
   justify-content: center;
 }
 
+.question-bar .upvote-block .vote-block i {
+  font-size: 175%;
+  color: $acquaPro;
+}
+
+.question-bar .upvote-block .vote-block i:hover{
+  color: $terra;
+}
+
+.question-bar .upvote-block .vote-block p {
+  display: flex;
+  align-items: center;
+}
+
+.question-bar .upvote-block .vote-block .active {
+  color: $terra;
+}
+
+
 .question-bar .upvote-block {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+////////////////////////////////////////////////////////////
+
+.question-show-title-bar {
+  display: flex;
+  align-self: flex-start;
+  width: 80px;
+  border-left: 2px solid rgba(3, 22, 52, 0.2);
+  border-right: 2px solid rgba(3, 22, 52, 0.2);
+  margin: 20px;
+  justify-content: center;
+}
+
+.question-show-title-bar .vote-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-show-title-bar .vote-block i {
+  font-size: 250%;
+  color: $acquaPro;
+  width: 100%;
+  text-align: center;
+}
+
+.question-show-title-bar .vote-block i:hover{
+  color: $terra;
+}
+
+.question-show-title-bar .vote-block .active{
+  color: $terra;
+}
+
+.question-show-title-bar .vote-block p {
+  text-align: center;
+  font-size: 150%;
+}
+
+//////////////////////////////////////////////////////////////
+
+.answer-title-upvote-block {
+  display: flex;
+  height: auto;
+}
+
+.answer-title-upvote-block .vote-block {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 15px;
+}
+
+
+.answer-title-upvote-block .title-bar{
+  width: 100%;
+}
+
+.answer-title-upvote-block .vote-block i {
+  font-size: 200%;
+  color: $acquaPro;
+}
+
+.answer-title-upvote-block .vote-block .active {
+  color: $terra;
+}
+
+.answer-title-upvote-block .vote-block i:hover{
+  color: $terra;
+}
+
+.answer-title-upvote-block .vote-block .active{
+  color: $terra;
+}
+
+.answer-title-upvote-block .vote-block p {
+  font-size: 130%;
+}
+
+//////////////////////////////////////////////////////////////

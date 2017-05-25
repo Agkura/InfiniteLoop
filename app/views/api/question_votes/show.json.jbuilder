@@ -15,4 +15,5 @@ json.set! @question.id do
     voted = false
   end
   json.voted voted
+  json.voteScore @question_vote.score
 end

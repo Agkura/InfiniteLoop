@@ -14,3 +14,4 @@ else
   voted = false
 end
 json.voted voted
+json.voteStatus @vote.status

@@ -21,17 +21,19 @@ class AnswerDetail extends React.Component{
 
     return(
       <ul className="answer-details">
-        <AnswerVoteContainer answer={this.props.answer} />
-        <AnswerMain answer={this.props.answer}
-                    body={body}
-                    authorId={authorId}
-                    questionId={this.props.questionId}
-                    loggedIn={this.props.loggedIn}
-                    userId={this.props.userId}
-                    id={id}
-                    requestAnswerUpdate={this.props.requestAnswerUpdate}
-                    requestAnswerDelete={this.props.requestAnswerDelete}
-                    />
+        <div className="answer-title-upvote-block">
+          <AnswerVoteContainer answer={this.props.answer} />
+          <AnswerMain answer={this.props.answer}
+            body={body}
+            authorId={authorId}
+            questionId={this.props.questionId}
+            loggedIn={this.props.loggedIn}
+            userId={this.props.userId}
+            id={id}
+            requestAnswerUpdate={this.props.requestAnswerUpdate}
+            requestAnswerDelete={this.props.requestAnswerDelete}
+            />
+        </div>
         <div className="username-time">
           <li className="time"><ElapsedTime created={createdAt} /></li>
           <li className="username">{username}</li>

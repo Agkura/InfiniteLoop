@@ -9,11 +9,16 @@
       count = 0
     end
     json.votes count
+    score = 0
+    if current_user
+      question.question_votes.each { |qv| score = qv.score if qv.author_id == current_user.id }
+    end
     if current_user && question.question_votes.map{ |vote| vote.author_id }.include?( current_user.id )
       voted =  true
     else
       voted = false
     end
     json.voted voted
+    json.voteScore score
   end
 end

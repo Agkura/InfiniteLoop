@@ -29,12 +29,12 @@ class AnswerVote extends React.Component{
     if (!this.props.loggedIn) {
       alert("Login or Sign-up first");
     }
-    if (!this.props.answer.voted && this.props.loggedIn ) {
+    if (!this.props.answer.voted && this.props.loggedIn && this.props.userId !== this.props.answer.authorId) {
       this.props.createAnswerVote({
         author_id: this.props.userId,
         answer_id: this.props.answer.id,
         status: -1
-      }) } else if (this.props.answer.voted && this.props.loggedIn){
+      }) } else if (this.props.answer.voted && this.props.loggedIn && this.props.userId !== this.props.answer.authorId){
         this.props.changeAnswerVote({
           author_id: this.props.userId,
           answer_id: this.props.answer.id,
@@ -45,17 +45,19 @@ class AnswerVote extends React.Component{
 
   render(){
     let values = this.props.answer !== undefined ? this.props.answer : {
-      voted: false,
       votes: "",
-      id: ""
+      id: "",
+      voteStatus: ""
     }
 
-    let { voted, votes, id } = values;
+    let { voteStatus, votes, id } = values;
+    let upped = voteStatus === 1 ? "active" : "";
+    let downed = voteStatus === -1 ? "active" : "";
     return(
       <div className="vote-block">
+        <i className={"fa fa-angle-up " + upped} aria-hidden="true" onClick={this.handleUpVote}></i>
         <p>{votes}</p>
-        <p onClick={this.handleUpVote}>up</p>
-        <p onClick={this.handleDownVote}>down</p>
+        <i className={"fa fa-angle-down " + downed} aria-hidden="true" onClick={this.handleDownVote}></i>
       </div>
     )
   }

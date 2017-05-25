@@ -38,17 +38,19 @@ class QuestionShow extends React.Component{
     return(
       <section className="question-show">
         <div className="question-show-block">
-          <ul className="question-show-items">
+          <div className="question-show-title-bar">
             <QuestionVoteContainer question={this.props.question} />
-            <QuestionShowTitleBar authorId={authorId}
-                                  userId={this.props.userId}
-                                  title={title}
-                                  requestQuestionDelete={this.props.requestQuestionDelete}
-                                  id={id}
-                                  loggedIn={this.props.loggedIn}
-                                  requestQuestionUpdate={this.props.requestQuestionUpdate}
-                                  question={this.props.question}
-            />
+          </div>
+          <ul className="question-show-items">
+              <QuestionShowTitleBar authorId={authorId}
+                userId={this.props.userId}
+                title={title}
+                requestQuestionDelete={this.props.requestQuestionDelete}
+                id={id}
+                loggedIn={this.props.loggedIn}
+                requestQuestionUpdate={this.props.requestQuestionUpdate}
+                question={this.props.question}
+                />
           <li className="body">{body.split('\n').map((item, key) => {
                                   return <span key={key}>{item}<br/></span>
                                 })}</li>

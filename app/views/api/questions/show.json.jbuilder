@@ -14,4 +14,12 @@ json.set! @question.id do
     voted = false
   end
   json.voted voted
+  score = 0
+  if current_user
+    hold = @question.question_votes.find_by(author_id: current_user.id)
+    if hold
+      score = hold.score
+    end
+  end
+  json.voteScore score
 end
