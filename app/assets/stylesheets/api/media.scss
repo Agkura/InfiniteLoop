@@ -3,9 +3,11 @@
 @media only screen and (max-width: 750px){
   .center{
     flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
   }
 
   .form{
     align-self: center;
+    -webkit-align-self: center;
   }
 }

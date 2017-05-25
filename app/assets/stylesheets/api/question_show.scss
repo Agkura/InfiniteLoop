@@ -2,26 +2,34 @@
 
 .question-show {
   flex: 3;
+  -webkit-flex: 3;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 30px;
   margin-top: 20px;
 
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   border-radius: 3px;
   font-family: "Playfair Display", "serif";
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   align-items: center;
+  -webkit-align-items: center;
   font-size: 90%;
 }
 
 .question-show-block {
   display: flex;
+  display: -webkit-flex;
   width: 100%;
   align-items: center;
+  -webkit-align-items: center;
   padding: 20px 30px;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   background-color: rgba(205, 179, 128, 0.1);
   border: 1px solid rgba(3, 22, 52, 0.2);
   margin-bottom: 20px;
@@ -29,7 +37,9 @@
 
 .question-show-items {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   width: 100%;
 }
 
@@ -39,8 +49,11 @@
 
 .title-bar {
   display: flex;
+  display: -webkit-flex;
   align-items: center;
+  -webkit-align-items: center;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   height: auto;
   border-bottom: 1px solid rgba(3, 22, 52, 0.3);
   margin-bottom: 15px;
@@ -49,11 +62,15 @@
 
 .username-time {
   align-self: flex-end;
+  -webkit-align-self: flex-end;
   display: flex;
+  display: -webkit-flex;
   font-family: 'PT Serif', serif;
   align-items: flex-end;
+  -webkit-align-items: flex-end;
   margin: 15px 0;
   flex-direction: column;
+  -webkit-flex-direction: column;
 }
 
 .time {
@@ -73,6 +90,7 @@
 .title-bar i {
   padding-left: 10px;
   align-self: flex-start;
+  -webkit-align-self: flex-start;
 }
 
 
@@ -84,6 +102,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   background-color: white;
   z-index: 1;
   color: $abisso;
@@ -127,6 +146,7 @@
   box-shadow: 2px 3px 10px rgba(3, 22, 52, 0.3);
   border: 1px solid $abisso;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 
@@ -146,7 +166,9 @@
 
 .edit-form {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   min-width: 100px;
 }
 
@@ -159,14 +181,18 @@
 
 .question-header {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
   border-bottom: 1px solid $abisso;
   margin-bottom: 20px;
 }
 
 .edit-modal-after h3{
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
+  -webkit-justify-content: center;
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(0,0,0, 0.5);
   padding-bottom: 20px;
