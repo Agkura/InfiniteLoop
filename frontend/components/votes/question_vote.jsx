@@ -53,9 +53,9 @@ class QuestionVote extends React.Component{
     let { voted, votes, id } = values;
     return(
       <div className="vote-block">
+        <i className="fa fa-angle-up" aria-hidden="true" onClick={this.handleUpVote}></i>
         <p>{votes}</p>
-        <p onClick={this.handleUpVote}>up</p>
-        <p onClick={this.handleDownVote}>down</p>
+        <i className="fa fa-angle-down" aria-hidden="true" onClick={this.handleDownVote}></i>
       </div>
     )
   }

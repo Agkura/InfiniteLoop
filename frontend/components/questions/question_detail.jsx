@@ -19,9 +19,8 @@ class QuestionDetail extends React.Component{
     let { title, username, createdAt, id } =  values;
     return(
       <div className="question-bar ">
-        <QuestionVoteContainer question={this.props.question} />
         <div className="upvote-block">
-
+          <QuestionVoteContainer question={this.props.question} />
         </div>
         <div className="question-grid">
           <ul className="question-upper">
