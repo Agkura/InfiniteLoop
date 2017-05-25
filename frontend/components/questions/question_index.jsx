@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import QuestionDetailContainer from './question_detail_container';
 import TabIndex from './tab_index';
+import { withRouter } from 'react-router-dom';
 
 class QuestionIndex extends React.Component{
   constructor(props){
@@ -49,6 +50,46 @@ class QuestionIndex extends React.Component{
     if (this.props.loggedIn && !nextProps.loggedIn) {
       this.props.clearQuestions();
       this.props.requestAllQuestions( 0 );
+    }
+    if (this.props.history.location.pathname === "/search") {
+      this.setState({
+        tabs: {
+        0: {
+          content: "Most Recent",
+          action: this.props.requestAllQuestions
+        },
+        1: {
+          content: "Trending",
+          action: this.props.requestTrendingQuestions
+        },
+        3: {
+          content: "Your Questions",
+          action: this.props.requestUserQuestions
+        },
+        2: {
+          content: "Search Results"
+        }
+      },
+      tab: "Search Results"
+    }) }else {
+      this.setState({
+        tabs: {
+        0: {
+          content: "Most Recent",
+          action: this.props.requestAllQuestions
+        },
+        1: {
+          content: "Trending",
+          action: this.props.requestTrendingQuestions
+        },
+        2: {
+          content: "Your Questions",
+          action: this.props.requestUserQuestions
+        }
+      },
+      tab: "Most Recent"
+    })
+
     }
   }
 
@@ -110,4 +151,4 @@ class QuestionIndex extends React.Component{
   }
 }
 
-export default QuestionIndex;
+export default withRouter(QuestionIndex);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class TabIndex extends React.Component{
   constructor(props){
@@ -15,6 +16,7 @@ class TabIndex extends React.Component{
       });
       this.props.handler(contentName);
       property();
+      this.props.history.push("/");
     }
   }
 
@@ -22,6 +24,13 @@ class TabIndex extends React.Component{
     if (this.props.loggedIn && !nextProps.loggedIn) {
       this.setState({
         selected: "0"
+      })
+    }
+    let newSelected = false;
+    Object.keys(nextProps.tabs).forEach( (key) => {if(nextProps.tabs[key].content==="Search Results") { newSelected = true }})
+    if ( newSelected ) {
+      this.setState({
+        selected: "2"
       })
     }
   }
@@ -49,4 +58,4 @@ class TabIndex extends React.Component{
   }
 }
 
-export default TabIndex;
+export default withRouter(TabIndex);

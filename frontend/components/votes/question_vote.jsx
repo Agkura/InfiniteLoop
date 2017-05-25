@@ -3,6 +3,9 @@ import React from 'react';
 class QuestionVote extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      blocked: false
+    }
     this.handleUpVote = this.handleUpVote.bind(this);
     this.handleDownVote = this.handleDownVote.bind(this);
   }
@@ -11,24 +14,30 @@ class QuestionVote extends React.Component{
     if (!this.props.loggedIn) {
       alert("Login or Sign-up first");
     }
-    if (!this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId) {
+    if (!this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId && !this.state.blocked) {
+      this.setState({
+        blocked: true
+      })
       this.props.createQuestionVote({
         author_id: this.props.userId,
         question_id: this.props.question.id,
         score: 1
-      }) } else if (this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId) {
+      }).then(()=>this.setState({blocked: false})) } else if (this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId && !this.state.blocked) {
+        this.setState({
+          blocked: true
+        })
         if (this.props.question.voteScore !== 1 ){
           this.props.changeQuestionVote({
             author_id: this.props.userId,
             question_id: this.props.question.id,
             score: 1
-          })
+          }).then(()=>this.setState({blocked: false}))
         } else {
           this.props.changeQuestionVote({
             author_id: this.props.userId,
             question_id: this.props.question.id,
             score: 0
-          })
+          }).then(()=>this.setState({blocked: false}))
         }
 
       }
@@ -38,24 +47,30 @@ class QuestionVote extends React.Component{
     if (!this.props.loggedIn) {
       alert("Login or Sign-up first");
     }
-    if (!this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId) {
+    if (!this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId && !this.state.blocked) {
+      this.setState({
+        blocked: true
+      })
       this.props.createQuestionVote({
         author_id: this.props.userId,
         question_id: this.props.question.id,
         score: -1
-      }) } else if (this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId){
+      }).then(()=>this.setState({blocked: false})) } else if (this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId && !this.state.blocked){
+        this.setState({
+          blocked: true
+        })
         if (this.props.question.voteScore !== -1 ){
           this.props.changeQuestionVote({
             author_id: this.props.userId,
             question_id: this.props.question.id,
             score: -1
-          })
+          }).then(()=>this.setState({blocked: false}))
         } else {
           this.props.changeQuestionVote({
             author_id: this.props.userId,
             question_id: this.props.question.id,
             score: 0
-          })
+          }).then(()=>this.setState({blocked: false}))
         }
 
       }

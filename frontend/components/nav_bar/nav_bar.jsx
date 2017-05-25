@@ -33,7 +33,7 @@ class NavBar extends React.Component{
           <Link to="/" ><img src={logoWhite} className="main-logo"></img></Link>
         </div>
 
-        <Search />
+        <Search requestSearchResults={this.props.requestSearchResults}/>
         <div className="nav-3">
           <div className="logout-button">
             {this.logoutOption()}

@@ -4,26 +4,35 @@
   height: 100px;
   width: 100%;
   background-color: $acquaPro;
-  display: flex;
+  display: -webkit-flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 0;
+  -webkit-justify-content: space-between;
+  -webkit-align-items: center;
 }
 
 .nav-1{
   flex: 1;
   align-self: flex-start;
+  -webkit-flex: 1;
+  -webkit-align-self: flex-start;
 }
 
 .nav-2{
-  flex:1;
+  flex:3;
   align-self: center;
+  -webkit-flex: 3;
+  -webkit-align-self: center;
 }
 
 .nav-3 {
   flex:1;
   display: flex;
   justify-content: flex-end;
+  -webkit-flex:1;
+  -webkit-display: flex;
+  -webkit-justify-content: flex-end;
 }
 
 .nav-bar a{
@@ -36,22 +45,35 @@
   border-radius: 3px;
   cursor: pointer;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   padding: 5px;
 }
 
 .search-bar {
   display: flex;
+  justify-content: flex-start;
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
 }
 
 .search-bar input{
   color: white;
-  border: 2px solid $terra;
+  border-bottom: 2px solid $terra;
   font-size: 75%;
-  width: 100%;
+  width: 15%;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   align-self: center;
+  -webkit-align-self: center;
   outline: none;
   padding: 5px;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+}
+
+.search-bar input:focus {
+  border: 2px solid $terra;
+  width: 40%
 }
 
 
@@ -72,12 +94,14 @@
   height: auto;
   width: 200px;
   padding: 10px;
+  -webkit-box-sizing: border-box;
 }
 
 .logout-button {
   color: white;
   text-align: center;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .logout-button button{
@@ -116,4 +140,15 @@
 .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
   left: 0;
   right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.nav-2 .description {
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  margin: auto;
+  font-size: 120%;
 }

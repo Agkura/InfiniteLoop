@@ -14,4 +14,11 @@ else
   voted = false
 end
 json.voted voted
-json.voteStatus @vote.status
+score = 0
+if current_user
+  hold = @answer.votes.find_by(author_id: current_user.id)
+  if hold
+    score = hold.score
+  end
+end
+json.voteStatus score

@@ -3,6 +3,9 @@ import React from 'react';
 class AnswerVote extends React.Component{
   constructor(props){
     super(props);
+    this.state={
+      blocked: false
+    }
     this.handleUpVote = this.handleUpVote.bind(this);
     this.handleDownVote = this.handleDownVote.bind(this);
   }
@@ -11,24 +14,31 @@ class AnswerVote extends React.Component{
     if (!this.props.loggedIn) {
       alert("Login or Sign-up first");
     }
-    if (!this.props.answer.voted && this.props.loggedIn ) {
+
+    if (!this.props.answer.voted && this.props.loggedIn  && !this.state.blocked && this.props.userId !== this.props.answer.authorId) {
+      this.setState({
+        blocked: true
+      })
       this.props.createAnswerVote({
         author_id: this.props.userId,
         answer_id: this.props.answer.id,
         status: 1
-      }) } else if (this.props.answer.voted && this.props.loggedIn) {
+      }).then(()=>this.setState({blocked: false})) } else if (this.props.answer.voted && this.props.loggedIn && !this.state.blocked && this.props.userId !== this.props.answer.authorId) {
+        this.setState({
+          blocked: true
+        })
         if (this.props.answer.voteStatus !== 1) {
           this.props.changeAnswerVote({
           author_id: this.props.userId,
           answer_id: this.props.answer.id,
           status: 1
-        })
+        }).then(()=>this.setState({blocked: false}))
       } else {
         this.props.changeAnswerVote({
         author_id: this.props.userId,
         answer_id: this.props.answer.id,
         status: 0
-      })
+      }).then(()=>this.setState({blocked: false}))
       }
   }
   }
@@ -37,24 +47,31 @@ class AnswerVote extends React.Component{
     if (!this.props.loggedIn) {
       alert("Login or Sign-up first");
     }
-    if (!this.props.answer.voted && this.props.loggedIn && this.props.userId !== this.props.answer.authorId) {
+
+    if (!this.props.answer.voted && this.props.loggedIn && this.props.userId !== this.props.answer.authorId && !this.state.blocked) {
+      this.setState({
+        blocked: true
+      })
       this.props.createAnswerVote({
         author_id: this.props.userId,
         answer_id: this.props.answer.id,
         status: -1
-      }) } else if (this.props.answer.voted && this.props.loggedIn && this.props.userId !== this.props.answer.authorId){
+      }).then(()=>this.setState({blocked: false})) } else if (this.props.answer.voted && this.props.loggedIn && this.props.userId !== this.props.answer.authorId && !this.state.blocked){
+        this.setState({
+          blocked: true
+        })
         if (this.props.answer.voteStatus !== -1) {
           this.props.changeAnswerVote({
             author_id: this.props.userId,
             answer_id: this.props.answer.id,
             status: -1
-          })
+          }).then(()=>this.setState({blocked: false}))
         } else {
           this.props.changeAnswerVote({
             author_id: this.props.userId,
             answer_id: this.props.answer.id,
             status: 0
-          })
+          }).then(()=>this.setState({blocked: false}))
         }
 
       }

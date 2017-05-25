@@ -5,17 +5,18 @@ import SearchIndex from '/search_index';
 const mapStateToProps = ( state ) => {
   return ({
     answers: state.answers,
-    questions: state.questions
+    questions: state.questions,
+    loggedIn: Boolean(state.session.currentUser)
   })
 }
 
-// const mapDispatchToProps = ( dispatch ) => {
-//   return ({
-//
-//   })
-// }
+const mapDispatchToProps = ( dispatch ) => {
+  return ({
+    clearQuestions: () => dispatch(clearQuestions())
+  })
+}
 
 export default connet(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(SearchIndex);

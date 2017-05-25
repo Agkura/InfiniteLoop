@@ -1,10 +1,10 @@
 import * as SearchUtil from '../util/search_util';
+import { RECEIVE_ALL_QUESTIONS } from './question_actions';
 
-export const RECEIVE_SEARCH_RESULTS = "RECEIVE_SEARCH_RESULTS";
 
-export const receiveSearchResults = ( results ) => ({
-  type: RECEIVE_SEARCH_RESULTS,
-  results
+export const receiveSearchResults = ( questions ) => ({
+  type: RECEIVE_ALL_QUESTIONS,
+  questions
 })
 
 export const requestSearchResults = ( query ) => ( dispatch ) => {
