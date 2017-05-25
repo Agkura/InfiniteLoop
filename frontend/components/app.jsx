@@ -17,6 +17,7 @@ const App = () =>(
       </Switch>
       <BaseRoute path="/" component={SessionFormContainer} altComponent={QuestionFormContainer} />
     </div>
+    <div id="footer"></div>
   </div>
 )
 

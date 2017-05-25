@@ -26,7 +26,10 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.includes(:author, :question_votes).all.order(created_at: :desc).offset( params[:offset] ).limit( 20 )
+    @questions = Question.includes(:author, :question_votes, :answers)
+                         .all.order(created_at: :desc)
+                         .offset( params[:offset] )
+                         .limit( 20 )
     render :index
   end
 
@@ -37,7 +40,9 @@ class Api::QuestionsController < ApplicationController
   end
 
   def user_questions
-    @questions = Question.includes(:author, :question_votes).where('author_id = ?', current_user.id).offset( params[:offset] ).limit( 20 )
+    @questions = Question.includes(:author, :question_votes, :answers)
+                         .where('author_id = ?', current_user.id)
+                         .offset( params[:offset] ).limit( 20 )
     render :index
   end
 

@@ -24,6 +24,10 @@
   align-self: center;
   -webkit-flex: 3;
   -webkit-align-self: center;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
 }
 
 .nav-3 {
@@ -31,8 +35,11 @@
   display: flex;
   justify-content: flex-end;
   -webkit-flex:1;
-  -webkit-display: flex;
+  display: -webkit-flex;
   -webkit-justify-content: flex-end;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding-right: 10px;
 }
 
 .nav-bar a{
@@ -102,14 +109,29 @@
   text-align: center;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  width: 50%;
+}
+
+.logout-button h4{
+  margin: 0;
+  border-bottom: 1px solid $terra;
+  padding-bottom: 5px;
 }
 
 .logout-button button{
   color: white;
   font-size: 120%;
-  padding: 20px;
   border-radius: 3px;
   cursor: pointer;
+  padding-top: 5px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 .hvr-underline-from-center {
@@ -149,6 +171,24 @@
 .nav-2 .description {
   color: white;
   font-family: "Josefin Sans", sans-serif;
-  margin: auto;
-  font-size: 120%;
+  font-size: 100%;
+  margin-top: 20px;
+}
+
+.search-element button {
+  font-size: 100%;
+  margin: auto 0;
+  margin-left: 5px;
+}
+
+.search-element button i {
+  padding: 0;
+  align-self: baseline;
+}
+
+.search-element {
+  display: flex;
+  display: -webkit-flex;
+  align-items: baseline;
+  -webkit-align-items: baseline;
 }

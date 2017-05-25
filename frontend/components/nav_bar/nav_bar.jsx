@@ -12,12 +12,15 @@ class NavBar extends React.Component{
   logoutOption(){
     if (this.props.loggedIn) {
       return (
-        <button className="hvr-underline-from-center nav-3" onClick={this.handleLogOut}>
-          <Link to="/" >Logout</Link>
-        </button>
+        <div className="logout-button">
+          <h4 className="username-nav-bar">{this.props.username}</h4>
+          <button className="hvr-underline-from-center" onClick={this.handleLogOut}>
+            <Link to="/" >Logout</Link>
+          </button>
+        </div>
       ) }else {
         return (
-          <p className="nav-3"></p>
+          null
         )
       }
     }
@@ -35,9 +38,7 @@ class NavBar extends React.Component{
 
         <Search requestSearchResults={this.props.requestSearchResults}/>
         <div className="nav-3">
-          <div className="logout-button">
             {this.logoutOption()}
-          </div>
         </div>
       </div>
     )

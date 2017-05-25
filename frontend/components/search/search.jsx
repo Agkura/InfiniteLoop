@@ -48,17 +48,19 @@ class Search extends React.Component{
   render(){
     return(
       <div className="search-bar nav-2">
-        <input type="text"
-               value={this.state.search}
-               placeholder='Search...'
-               size="50"
-               onChange={this.update("search")}
-               onKeyPress={this.handleEnter}
-               onBlur={this.handleBlur}
-               onFocus={this.handleFocus}>
-        </input>
-        <button  onClick={this.handleSearch}><i className="fa fa-search" aria-hidden="true"></i></button>
-        <h1 className={this.state.hidden + " description"}>Authoritative Community for <br /> Programmers and Developers</h1>
+        <div className="search-element">
+          <input type="text"
+                 value={this.state.search}
+                 placeholder='Search...'
+                 size="50"
+                 onChange={this.update("search")}
+                 onKeyPress={this.handleEnter}
+                 onBlur={this.handleBlur}
+                 onFocus={this.handleFocus}>
+          </input>
+          <button  onClick={this.handleSearch}><i className="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+        <h1 className={this.state.hidden + " description"}>Authoritative Community for Programmers and Developers</h1>
       </div>
     )
   }

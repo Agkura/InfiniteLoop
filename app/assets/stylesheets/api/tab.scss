@@ -4,9 +4,13 @@
   display: flex;
   display: -webkit-flex;
   width: 100%;
+  height: auto;
   justify-content: flex-end;
   -webkit-justify-content: flex-end;
+  align-items: center;
+  -webkit-align-items: center;
 }
+
 
 .tab-bar li button:not(.unselected) {
   border-top: 3px solid $terra;
