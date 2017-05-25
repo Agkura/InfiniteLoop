@@ -98,10 +98,10 @@ class SessionForm extends React.Component{
 
             <div className="upper-tab">
               <p className="tab-1">
-                <Link className={colorTab} to="/signup" ><button  type="button" onClick={this.setSignUp}>Sign up</button></Link>
+                <Link className={colorTab} to="/signup" ><button className="button-tab" type="button" onClick={this.setSignUp}>Sign up</button></Link>
               </p>
               <p className="tab-2">
-                <NavLink className="link" to="/login" activeClassName="tab-2-active"><button type="button" onClick={this.setLogIn}>Login</button></NavLink>
+                <NavLink className="link" to="/login" activeClassName="tab-2-active"><button className="button-tab" type="button" onClick={this.setLogIn}>Login</button></NavLink>
               </p>
             </div>
           <div className="lower-tab">

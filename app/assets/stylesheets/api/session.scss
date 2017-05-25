@@ -17,6 +17,7 @@
   align-self: flex-start;
   flex: 1;
   font-family: "Droid Sans", serif;
+  background-color: rgba(232, 221, 203, 0.1);
 }
 
 .form-logo{
@@ -28,6 +29,23 @@
   box-sizing: border-box;
   margin-bottom: 15px;
 }
+
+.button-tab {
+  background-color: white;
+}
+
+.tab-2-active .button-tab {
+  background-color: $acquaPro;
+}
+
+.tab-1 .color .button-tab {
+  background-color: $acquaPro;
+}
+
+.title-block .flex-1 {
+  background-color: white;
+}
+
 
 .main-form {
   display: flex;
@@ -64,6 +82,10 @@
   padding: 4px;
 }
 
+.main-form input:not(.form-submit) {
+  background-color: white;
+}
+
 .title-block {
   display: flex;
 }
@@ -88,6 +110,7 @@
   background-color: $acquaPro;
   border-radius: 0;
 }
+
 
 .tab-2-active button {
   color: white;

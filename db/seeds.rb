@@ -28,11 +28,9 @@ salsolo = User.create(username: "Sal-Solo", email: "thrackan@sal-solo.com", pass
 tharen = User.create(username: "Tharen", email: "bria@tharen.com", password: "password")
 ###########################################################################
 
-
-# 500.times do
-#   Question.create(title: Faker::Lorem.paragraph(1, true, 5), body: Faker::Lorem.paragraph(5, true, 4), author_id: (1..117).to_a.sample)
-# end
-#
+100.times do
+  User.create(username: Faker::Internet.user_name, password: Faker::Internet.password(8), email: Faker::Internet.safe_email)
+end
 
 
 
@@ -1508,4 +1506,21 @@ There are downsides of composition, though. If you skip inheritance altogether a
     an_answer = Answer.new(body: answers.sample, author_id: (1..17).to_a.sample, question_id: (1..35).to_a.sample)
   end
   an_answer.save
+end
+
+
+100.times do
+  a_vote = Vote.new()
+  until a_vote.valid?
+    a_vote = Vote.create(author_id: (1..117).to_a.sample, answer_id: (1..300).to_a.sample, status: [1,-1].sample)
+  end
+  a_vote.save
+end
+
+50.times do
+  a_qv = QuestionVote.new()
+  until a_qv.valid?
+    a_qv = QuestionVote.create(author_id: (1..117).to_a.sample, question_id: (1..35).to_a.sample, score: [1,-1].sample)
+  end
+  a_qv.save
 end
