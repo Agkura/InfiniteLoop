@@ -4,6 +4,11 @@ json.set! @question.id do
   json.authorId @question.author_id
   json.username @question.author.username
   json.votes @question.vote_count
+  count = @question.vote_count
+  if count == nil
+    count = 0
+  end
+  json.votes count
   if current_user && @question.question_votes.map{ |vote| vote.author_id }.include?( current_user.id )
     voted =  true
   else
