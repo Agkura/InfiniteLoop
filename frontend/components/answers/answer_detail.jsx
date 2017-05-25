@@ -16,11 +16,12 @@ class AnswerDetail extends React.Component{
       authorId: "",
       id: ""
     }
+    let highlight = this.props.answer.authorId === this.props.userId ? "highlight" : "";
 
     let { body, username, createdAt, authorId, id } = values;
 
     return(
-      <ul className="answer-details">
+      <ul className={"answer-details " + highlight}>
         <div className="answer-title-upvote-block">
           <AnswerVoteContainer answer={this.props.answer} />
           <AnswerMain answer={this.props.answer}

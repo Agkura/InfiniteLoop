@@ -75,14 +75,24 @@ class QuestionIndex extends React.Component{
     let showQuestions = Object.keys(this.props.questions).reverse().map( (key, idx) =>
       (<QuestionDetailContainer key={idx} questionId={key} />)
     )
+    let goBack = this.state.page > 0 ? (<button onClick={this.handleBack}>
+      <i className="fa fa-chevron-left" aria-hidden="true"></i>
+    </button>) :( <button className="button-disabled">
+      <i className="fa fa-chevron-left page-disabled" aria-hidden="true"></i>
+    </button>)
+    let goForward = Object.keys(this.props.questions).length < 20 ? (
+      <button className="button-disabled">
+        <i className="fa fa-chevron-right page-disabled" aria-hidden="true"></i>
+      </button>
+    ) : (
+      <button  onClick={this.handleNext}>
+        <i className="fa fa-chevron-right" aria-hidden="true"></i>
+      </button>
+  )
     let pages = this.state.tab !== "Your Questions" ? (
-      <div className="questions-list-navigation">
-        <button onClick={this.handleBack}>
-          <i className="fa fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        <button onClick={this.handleNext}>
-          <i className="fa fa-chevron-right" aria-hidden="true"></i>
-        </button>
+      <div className="questions-list-navigation" id="qlv">
+        {goBack}
+        {goForward}
       </div>
     ) : null;
     return(

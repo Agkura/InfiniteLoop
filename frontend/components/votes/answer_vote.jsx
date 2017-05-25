@@ -17,12 +17,20 @@ class AnswerVote extends React.Component{
         answer_id: this.props.answer.id,
         status: 1
       }) } else if (this.props.answer.voted && this.props.loggedIn) {
-        this.props.changeAnswerVote({
+        if (this.props.answer.voteStatus !== 1) {
+          this.props.changeAnswerVote({
           author_id: this.props.userId,
           answer_id: this.props.answer.id,
           status: 1
         })
+      } else {
+        this.props.changeAnswerVote({
+        author_id: this.props.userId,
+        answer_id: this.props.answer.id,
+        status: 0
+      })
       }
+  }
   }
 
   handleDownVote(e){
@@ -35,11 +43,20 @@ class AnswerVote extends React.Component{
         answer_id: this.props.answer.id,
         status: -1
       }) } else if (this.props.answer.voted && this.props.loggedIn && this.props.userId !== this.props.answer.authorId){
-        this.props.changeAnswerVote({
-          author_id: this.props.userId,
-          answer_id: this.props.answer.id,
-          status: -1
-        })
+        if (this.props.answer.voteStatus !== -1) {
+          this.props.changeAnswerVote({
+            author_id: this.props.userId,
+            answer_id: this.props.answer.id,
+            status: -1
+          })
+        } else {
+          this.props.changeAnswerVote({
+            author_id: this.props.userId,
+            answer_id: this.props.answer.id,
+            status: 0
+          })
+        }
+
       }
   }
 

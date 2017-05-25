@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { searchQuery } from '../../util/search_util';
+import SearchIndex from '/search_index';
 
 const mapStateToProps = ( state ) => {
   return ({
@@ -8,8 +9,13 @@ const mapStateToProps = ( state ) => {
   })
 }
 
-const mapDispatchToProps = ( dispatch ) => {
-  return ({
-    searchQuery: ( query ) => dispatch(searchQuery( query ))
-  })
-}
+// const mapDispatchToProps = ( dispatch ) => {
+//   return ({
+//
+//   })
+// }
+
+export default connet(
+  mapStateToProps,
+  null
+)(SearchIndex);

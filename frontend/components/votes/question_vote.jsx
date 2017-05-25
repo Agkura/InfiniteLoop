@@ -17,11 +17,20 @@ class QuestionVote extends React.Component{
         question_id: this.props.question.id,
         score: 1
       }) } else if (this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId) {
-        this.props.changeQuestionVote({
-          author_id: this.props.userId,
-          question_id: this.props.question.id,
-          score: 1
-        })
+        if (this.props.question.voteScore !== 1 ){
+          this.props.changeQuestionVote({
+            author_id: this.props.userId,
+            question_id: this.props.question.id,
+            score: 1
+          })
+        } else {
+          this.props.changeQuestionVote({
+            author_id: this.props.userId,
+            question_id: this.props.question.id,
+            score: 0
+          })
+        }
+
       }
   }
 
@@ -35,11 +44,20 @@ class QuestionVote extends React.Component{
         question_id: this.props.question.id,
         score: -1
       }) } else if (this.props.question.voted && this.props.loggedIn && this.props.userId !== this.props.question.authorId){
-        this.props.changeQuestionVote({
-          author_id: this.props.userId,
-          question_id: this.props.question.id,
-          score: -1
-        })
+        if (this.props.question.voteScore !== -1 ){
+          this.props.changeQuestionVote({
+            author_id: this.props.userId,
+            question_id: this.props.question.id,
+            score: -1
+          })
+        } else {
+          this.props.changeQuestionVote({
+            author_id: this.props.userId,
+            question_id: this.props.question.id,
+            score: 0
+          })
+        }
+
       }
   }
 
