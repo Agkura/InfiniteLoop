@@ -1,6 +1,6 @@
 # InfiniteLoop
 
-[Heroku Link][na]
+[Heroku Link][heroku]
 
 [StackOverflow Link][stack]
 
@@ -36,6 +36,7 @@ sufficient CSS styling:
 [endpoints]: api-endpoints.md
 [schema]: schema.md
 [state]: sample-state.md
+[heroku]: https://shrouded-falls-24793.herokuapp.com/#/
 
 ## Implementation Timeline
 ### Phase 1: Backend Setup and Full User Auth ( 3 days )
