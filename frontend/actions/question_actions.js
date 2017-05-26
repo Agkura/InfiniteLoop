@@ -29,7 +29,10 @@ export const clearQuestions = () => ({
 //async
 export const requestAllQuestions = ( offset ) => ( dispatch ) => {
   return QuestionUtil.fetchQuestions( offset )
-  .then( res => dispatch(receiveAllQuestions(res)))
+  .then( res => {
+    console.log(res);
+    dispatch(receiveAllQuestions(res))
+  })
 }
 
 export const submitQuestion = ( question ) => ( dispatch ) => {
@@ -56,7 +59,10 @@ export const requestUserQuestions = () => ( dispatch ) => {
 
 export const requestTrendingQuestions = ( offset ) => ( dispatch ) => {
   return QuestionUtil.trendingQuestions( offset )
-  .then( res => dispatch(receiveAllQuestions( res )))
+  .then( res => {
+    console.log(res);
+    dispatch(receiveAllQuestions( res ))
+  })
 }
 
 export const requestQuestion = ( id ) => ( dispatch ) => {

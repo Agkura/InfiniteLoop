@@ -14,13 +14,18 @@ class QuestionDetail extends React.Component{
     if (Boolean(this.props.question)){
       values = this.props.question;
     } else {
-      values = { title: "", username: "", createdAt: "", id: ""};
+      values = { title: "", username: "", createdAt: "", id: "", answerCount: 0};
     }
-    let { title, username, createdAt, id } =  values;
+    let { title, username, createdAt, id, answerCount } =  values;
+    let answered = answerCount > 0 ? "answered-box" : "";
     return(
       <div className="question-bar ">
         <div className="upvote-block">
           <QuestionVoteContainer question={this.props.question} />
+          <div className={"answered " + answered}>
+            <h3>{answerCount}</h3>
+            <h4>Answers</h4>
+          </div>
         </div>
         <div className="question-grid">
           <ul className="question-upper">

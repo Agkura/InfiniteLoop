@@ -17,7 +17,7 @@ class Search extends React.Component{
 
   handleSearch(e){
     this.props.requestSearchResults( this.state )
-    .then( () => this.props.history.push("/search"))
+    .then( () => this.props.history.push(`/search?${this.state.search}`))
     .then( () => this.setState({
       search: ""
     }))

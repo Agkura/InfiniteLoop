@@ -113,9 +113,10 @@ class QuestionIndex extends React.Component{
 
 
   render(){
-    let showQuestions = Object.keys(this.props.questions).reverse().map( (key, idx) =>
+    let showQuestions = Object.keys(this.props.questions).map( (key, idx) =>
       (<QuestionDetailContainer key={idx} questionId={key} />)
     )
+    if (showQuestions.length === 0 ) { showQuestions = (<h3>No Matches</h3>)}
     let goBack = this.state.page > 0 ? (<button onClick={this.handleBack}>
       <i className="fa fa-chevron-left" aria-hidden="true"></i>
     </button>) :( <button className="button-disabled">

@@ -5,11 +5,11 @@ import { RECEIVE_ALL_QUESTIONS, RECEIVE_NEW_QUESTION,
 
 const QuestionsReducer = ( state = {}, action ) => {
   let newState = merge({}, state);
-  console.log(action.type);
   switch(action.type){
     case RECEIVE_NEW_QUESTION:
       return Object.assign(newState, action.question)
     case RECEIVE_ALL_QUESTIONS:
+      console.log(action.questions);
       return merge({}, action.questions);
     case DELETE_QUESTION:
       delete newState[action.question.id];

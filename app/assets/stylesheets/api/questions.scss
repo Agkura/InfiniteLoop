@@ -89,10 +89,6 @@
   -webkit-flex: 1;
 }
 
-.upvote-block{
-
-}
-
 .question-username{
   flex: 1;
   -webkit-flex: 1;
@@ -104,9 +100,6 @@
   -webkit-flex: 3;
   text-align: right;
   font-size: 75%;
-}
-
-.question-fill-lower{
 }
 
 .questions-list-navigation {
@@ -125,12 +118,7 @@
   width: 100%;
 }
 
-.questions-list-navigation button {
-  cursor: pointer;
-}
-
 .questions-list-navigation:last-child button{
-  cursor: pointer;
   flex: 1;
   -webkit-flex: 1;
   align-self: flex-start;
@@ -176,6 +164,7 @@
 
 .fa-chevron-left, .fa-chevron-right {
   color: $abisso;
+  cursor: pointer;
 }
 
 #qlv .page-disabled {

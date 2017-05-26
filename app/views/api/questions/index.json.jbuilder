@@ -20,5 +20,6 @@
     end
     json.voted voted
     json.voteScore score
+    json.answerCount question.answers.count
   end
 end
