@@ -31,8 +31,6 @@ class Search extends React.Component{
       {  this.props.requestSearchResults(this.props.history.location.search.slice(7))}
   }
 
-
-
   handleEnter(e){
     if (e.key === 'Enter') {
       let query = this.state.query.split(" ").join("+");

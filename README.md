@@ -1,24 +1,7 @@
-# README
+# InfiniteLoop
+[InfiniteLoop][infinite] is a single-page web application built to extract the core functionality of sites like [StackOverflow][stack], from which it is inspired, in a minimalistic manner.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+InfiniteLoop was meant to be constructed within a loose two-week time-frame with the intent on being spartan and intuitive.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[infinite]: https://shrouded-falls-24793.herokuapp.com/#/
+[stack]: stackoverflow.com

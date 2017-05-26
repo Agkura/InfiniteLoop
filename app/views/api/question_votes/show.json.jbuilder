@@ -16,4 +16,5 @@ json.set! @question.id do
   end
   json.voted voted
   json.voteScore @question_vote.score
+  json.answerCount @question.answers.count
 end

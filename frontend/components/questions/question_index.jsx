@@ -34,7 +34,6 @@ class QuestionIndex extends React.Component{
     this.props.clearQuestions();
     let offset = Math.abs(this.state.page * 20);
     if (this.props.location.pathname !== "/search") {this.props.requestAllQuestions( offset )}
-
   }
 
   componentWillUpdate( nextProps , nextState ){
@@ -116,7 +115,7 @@ class QuestionIndex extends React.Component{
 
 
   render(){
-    let keys = Object.keys(this.props.questions)
+    let keys = Object.keys(this.props.questions).reverse();
     let sorted = false;
     if (this.state.tab === "Trending"){
       while(!sorted){
