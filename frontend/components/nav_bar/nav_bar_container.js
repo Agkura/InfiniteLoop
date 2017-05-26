@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import NavBar from './nav_bar';
 import { requestLogOut } from '../../actions/session_actions';
 import { requestSearchResults } from '../../actions/search_actions';
+import { requestAllQuestions } from '../../actions/question_actions';
 
 const mapStateToProps = ( state ) => {
   let username = "";
@@ -14,7 +15,8 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = ( dispatch ) => ({
   requestLogOut: () => dispatch(requestLogOut()),
-  requestSearchResults: ( query ) => dispatch(requestSearchResults( query ))
+  requestSearchResults: ( query ) => dispatch(requestSearchResults( query )),
+  requestAllQuestions: ( offset ) => dispatch(requestAllQuestions( offset ))
 })
 
 export default connect(

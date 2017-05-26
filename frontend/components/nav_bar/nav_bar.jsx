@@ -7,6 +7,7 @@ class NavBar extends React.Component{
     super(props)
     this.logoutOption = this.logoutOption.bind(this);
     this.handleLogOut = this.handleLogOut.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   logoutOption(){
@@ -29,11 +30,15 @@ class NavBar extends React.Component{
     this.props.requestLogOut();
   }
 
+  reset(e){
+    this.props.requestAllQuestions( 0 );
+  }
+
   render(){
     return(
       <div className="nav-bar">
         <div className="nav-1">
-          <Link to="/" ><img src={logoWhite} className="main-logo"></img></Link>
+          <Link onClick={this.reset} to="/" ><img src={logoWhite} className="main-logo"></img></Link>
         </div>
 
         <Search requestSearchResults={this.props.requestSearchResults}/>

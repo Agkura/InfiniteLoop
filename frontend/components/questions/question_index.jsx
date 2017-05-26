@@ -33,17 +33,21 @@ class QuestionIndex extends React.Component{
   componentWillMount(){
     this.props.clearQuestions();
     let offset = Math.abs(this.state.page * 20);
-    this.props.requestAllQuestions( offset );
+    if (this.props.location.pathname !== "/search") {this.props.requestAllQuestions( offset )}
+
   }
 
-  componentWillUpdate( _ , nextState ){
+  componentWillUpdate( nextProps , nextState ){
     if (this.state.page !== nextState.page  && nextState.tab === "Most Recent"){
       this.props.requestAllQuestions( Math.abs(nextState.page * 20));
     } else if(this.state.page !== nextState.page  && nextState.tab === "Trending"){
       this.props.requestTrendingQuestions( Math.abs(nextState.page * 20));
     } else if(this.state.page !== nextState.page && nextState.tab === "Your Questions"){
       this.props.requestUserQuestions( Math.abs(nextState.page * 20));
+    } else if(nextProps.history.location.pathname !== this.props.history.location.pathname){
+      this.props.requestAllQuestions( Math.abs(nextState.page * 20));
     }
+
   }
 
   componentWillReceiveProps(nextProps){
@@ -51,7 +55,7 @@ class QuestionIndex extends React.Component{
       this.props.clearQuestions();
       this.props.requestAllQuestions( 0 );
     }
-    if (this.props.history.location.pathname === "/search") {
+    if (nextProps.history.location.pathname === "/search") {
       this.setState({
         tabs: {
         0: {
