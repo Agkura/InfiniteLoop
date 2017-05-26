@@ -18,7 +18,7 @@ class QuestionIndex extends React.Component{
           content: "Trending",
           action: this.props.requestTrendingQuestions
         },
-        2: {
+        3: {
           content: "Your Questions",
           action: this.props.requestUserQuestions
         }
@@ -51,6 +51,7 @@ class QuestionIndex extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
+    console.log("hi");
     if (this.props.loggedIn && !nextProps.loggedIn) {
       this.props.clearQuestions();
       this.props.requestAllQuestions( 0 );
@@ -86,12 +87,11 @@ class QuestionIndex extends React.Component{
           content: "Trending",
           action: this.props.requestTrendingQuestions
         },
-        2: {
+        3: {
           content: "Your Questions",
           action: this.props.requestUserQuestions
         }
-      },
-      tab: "Most Recent"
+      }
     })
 
     }
@@ -117,7 +117,23 @@ class QuestionIndex extends React.Component{
 
 
   render(){
-    let showQuestions = Object.keys(this.props.questions).map( (key, idx) =>
+    let keys = Object.keys(this.props.questions)
+    let sorted = false;
+    if (this.state.tab === "Trending"){
+      while(!sorted){
+        sorted = true
+        for(let i = 0; i < keys.length-1; i++){
+          if(this.props.questions[keys[i]].answerCount < this.props.questions[keys[i+1]].answerCount){
+            let hold = keys[i]
+            keys[i] = keys[i+1]
+            keys[i+1] = hold
+            sorted = false
+          }
+        }
+        console.log(keys);
+      }
+    }
+    let showQuestions = keys.map( (key, idx) =>
       (<QuestionDetailContainer key={idx} questionId={key} />)
     )
     if (showQuestions.length === 0 ) { showQuestions = (<h3>No Matches</h3>)}

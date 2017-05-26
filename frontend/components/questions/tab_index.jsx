@@ -32,10 +32,6 @@ class TabIndex extends React.Component{
       this.setState({
         selected: "2"
       })
-    } else {
-      this.setState({
-        selected: "0"
-      })
     }
   }
 
