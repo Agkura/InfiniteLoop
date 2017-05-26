@@ -55,7 +55,7 @@ The `react` state is purposefully kept small, lightweight and normalized.  This 
 
 [Initial Proposal][proposal]
 
-### The Stack
+#### The Stack
 InfiniteLoop was realized within a limited time frame and thus built with speed and functionality in mind.  It implements Ruby on Rails, backed by PostgreSql, with `react/redux` incorporating `react-router` for streamlined single-page app capabilities.  The modular capabilities of react/redux/react-router combined allows for quick deployment as well as reliable functionality.
 
 ```javascript
