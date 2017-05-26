@@ -4,7 +4,6 @@
 
 [StackOverflow Link][stack]
 
-[heroku]: na
 [stack]: http://stackoverflow.com/
 
 
