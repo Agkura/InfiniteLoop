@@ -25,6 +25,8 @@ Editing and deleting of questions and answers trigger a `react-modal` for quick 
 
 ![edit-dropdown-demo](/docs/images/edit-dropdown.png)
 
+Answering questions is limited to one answer per user and no option for the original question author to answer their own question.  Questions down to upvotes/downvotes are `dependent: :destroy` leaving no opportunity for orphaned answers and votes.
+
 ### *Search*
 The search bar creates a new tab upon completion and returns all questions that have relevant content across the title, body content and/or answers.
 
@@ -47,8 +49,8 @@ def trending
   render :index
 end
 ```
+The current iteration of InfiniteLoop utilizes separate tables and associations for votes applying to questions and answers.  The following iteration will use polymorphic associations which will be especially useful in conjunction with a third and fourth table for replies.
 
-Answering questions is limited to one answer per user and no option for the original question author to answer their own question.  Questions down to upvotes/downvotes are `dependent: :destroy` leaving no opportunity for orphaned answers and votes.
 
 ### The Stack
 InfiniteLoop was realized within a limited time frame and thus built with speed and functionality in mind.  It implements Ruby on Rails, backed by PostgreSql, with `react/redux` incorporating `react-router` for streamlined single-page app capabilities.  The modular capabilities of react/redux/react-router combined allows for quick deployment as well as reliable functionality.
