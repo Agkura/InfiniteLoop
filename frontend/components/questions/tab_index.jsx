@@ -16,7 +16,8 @@ class TabIndex extends React.Component{
       });
       this.props.handler(contentName);
       property();
-      this.props.history.push("/");
+      if (this.props.history.location.pathname !== "/")
+      {this.props.history.push("/");}
     }
   }
 
