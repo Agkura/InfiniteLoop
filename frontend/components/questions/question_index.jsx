@@ -45,6 +45,8 @@ class QuestionIndex extends React.Component{
       this.props.requestUserQuestions( Math.abs(nextState.page * 20));
     } else if(nextProps.history.location.pathname !== this.props.history.location.pathname){
       this.props.requestAllQuestions( Math.abs(nextState.page * 20));
+    } else if (this.props.location.pathname === "/search" && nextProps.location.pathname === "/" && this.state.tab === nextState.tab){
+      this.props.requestAllQuestions( 0 );
     }
 
   }

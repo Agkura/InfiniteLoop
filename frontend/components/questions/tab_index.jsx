@@ -36,6 +36,14 @@ class TabIndex extends React.Component{
     }
   }
 
+  componentWillUpdate(nextProps, nextState){
+    if (this.props.location.pathname !== nextProps.location.pathname && nextState.selected === "2" ) {
+      this.setState({
+        selected: "0"
+      })
+    }
+  }
+
   render(){
     let keys = this.props.loggedIn ? Object.keys(this.props.tabs).sort() : Object.keys(this.props.tabs).sort().slice(0,-1);
     let active;
