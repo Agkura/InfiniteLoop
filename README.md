@@ -11,8 +11,8 @@ InfiniteLoop was constructed within a loose two-week time-frame with the intent 
 
 * User Authentication
 * Pose questions and corresponding answers
-* Upvote / downvote community
 * Search
+* Upvote / downvote community
 
 #### *User Authentication*
 InfiniteLoop utilizes secure authentication with mandatory session token resets during all aspects of login and logout.  Passwords are secured with salted hashes without storing the unencrypted version.
@@ -25,7 +25,7 @@ Editing and deleting of questions and answers trigger a `react-modal` for quick 
 ![edit-dropdown-demo](/docs/images/edit-dropdown.png)
 
 ### *Search*
-The search bar creates a new tab upon completion and returns all questions that have relevant content across the title, body content and answers.
+The search bar creates a new tab upon completion and returns all questions that have relevant content across the title, body content and/or answers.
 
 #### *Upvote and Downvote*
 The ability to upvote and downvote answers and questions brings attention to the merits and/or lack of usefulness for answers while creating awareness for more intriguing questions.  The trending section is not based off of the attached vote score:
