@@ -9,7 +9,6 @@ const QuestionsReducer = ( state = {}, action ) => {
     case RECEIVE_NEW_QUESTION:
       return Object.assign(newState, action.question)
     case RECEIVE_ALL_QUESTIONS:
-      console.log(action.questions);
       return merge({}, action.questions);
     case DELETE_QUESTION:
       delete newState[action.question.id];

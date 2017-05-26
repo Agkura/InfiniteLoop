@@ -30,7 +30,6 @@ export const clearQuestions = () => ({
 export const requestAllQuestions = ( offset ) => ( dispatch ) => {
   return QuestionUtil.fetchQuestions( offset )
   .then( res => {
-    console.log(res);
     dispatch(receiveAllQuestions(res))
   })
 }
@@ -60,7 +59,6 @@ export const requestUserQuestions = () => ( dispatch ) => {
 export const requestTrendingQuestions = ( offset ) => ( dispatch ) => {
   return QuestionUtil.trendingQuestions( offset )
   .then( res => {
-    console.log(res);
     dispatch(receiveAllQuestions( res ))
   })
 }
