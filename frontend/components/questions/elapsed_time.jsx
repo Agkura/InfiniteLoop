@@ -6,7 +6,7 @@ class ElapsedTime extends React.Component{
     super(props);
     this.findElapsed = this.findElapsed.bind(this);
     this.state = {
-      time: 0
+      time: ""
     }
   }
 
