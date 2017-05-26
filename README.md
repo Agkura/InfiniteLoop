@@ -52,7 +52,12 @@ end
 The current iteration of InfiniteLoop utilizes separate tables and associations for votes applying to questions and answers.  The following iteration will use polymorphic associations which will be especially useful in conjunction with a third and fourth table for replies.
 
 
-### The Stack
+#### *Limited State*
+The `react` state is purposefully kept small, lightweight and normalized.  This keeps Ajax requests light and leaves the heavy-lifting to RoR and PostgreSql.  The maximum number of Questions maintained on the client-side is 20.  The answer slice was left un-capped in attempting to keep in line with the efficiency and availability mantra of the InfinteLoop user experience. You can find more information on the initial proposal, state structure and RESTful routes used:
+
+[Initial Proposal][proposal]
+
+#### The Stack
 InfiniteLoop was realized within a limited time frame and thus built with speed and functionality in mind.  It implements Ruby on Rails, backed by PostgreSql, with `react/redux` incorporating `react-router` for streamlined single-page app capabilities.  The modular capabilities of react/redux/react-router combined allows for quick deployment as well as reliable functionality.
 
 ```javascript
@@ -102,10 +107,6 @@ InfiniteLoop was realized within a limited time frame and thus built with speed 
 
 Passing a handler function to children components at will through the use of the redux `Provider` and `Connect` as well as the history manipulation from `react-router`'s `withRouter`, the tab navigation bar can remain modular yet appropriately direct and render the user experience with minimal re-renders.
 
-#### *Limited State*
-The `react` state is purposefully kept small, lightweight and normalized.  This keeps Ajax requests light and leaves the heavy-lifting to RoR and PostgreSql.  The maximum number of Questions maintained on the client-side is 20.  The answer slice was left un-capped in attempting to keep in line with the efficiency and availability mantra of the InfinteLoop user experience. You can find more information on the initial proposal, state structure and RESTful routes used:
-
-[Initial Proposal][proposal]
 
 ### Beyond the MVP
 Though the base functionality has been achieved, there are a few more important components, though not required for usability, that will need to be implemented:
