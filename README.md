@@ -48,7 +48,7 @@ end
 ```
 
 ### The Stack
-InfiniteLoop was realized within a limited time frame and thus built with speed and functionality in mind.  It implements Ruby on Rails, backed by Postgresql, with `react/redux` incorporating `react-router` for streamlined single-page app capabilities.  The modular capabilities of react/redux/react-router combined allows for quick deployment as well as functionality.
+InfiniteLoop was realized within a limited time frame and thus built with speed and functionality in mind.  It implements Ruby on Rails, backed by PostgreSql, with `react/redux` incorporating `react-router` for streamlined single-page app capabilities.  The modular capabilities of react/redux/react-router combined allows for quick deployment as well as functionality.
 
 ```javascript
   //questions index
