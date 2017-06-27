@@ -28,8 +28,12 @@ salsolo = User.create(username: "Sal-Solo", email: "thrackan@sal-solo.com", pass
 tharen = User.create(username: "Tharen", email: "bria@tharen.com", password: "password")
 ###########################################################################
 
-100.times do
-  User.create(username: Faker::Internet.user_name, password: Faker::Internet.password(8), email: Faker::Internet.safe_email)
+1000.times do
+  User.create(username: Faker::Internet.unique.user_name, password: Faker::Internet.password(8), email: Faker::Internet.safe_email)
+end
+
+10000.times do
+  User.create(username: Faker::Internet.user_name + (1..1000).to_a.sample.to_s, password: Faker::Internet.password(8), email: Faker::Internet.safe_email)
 end
 
 
@@ -1509,18 +1513,18 @@ There are downsides of composition, though. If you skip inheritance altogether a
 end
 
 
-100.times do
+7000.times do
   a_vote = Vote.new()
   until a_vote.valid?
-    a_vote = Vote.create(author_id: (1..117).to_a.sample, answer_id: (1..300).to_a.sample, status: [1,-1].sample)
+    a_vote = Vote.create(author_id: (1..10000).to_a.sample, answer_id: (1..300).to_a.sample, status: 1)
   end
   a_vote.save
 end
 
-50.times do
+2000.times do
   a_qv = QuestionVote.new()
   until a_qv.valid?
-    a_qv = QuestionVote.create(author_id: (1..117).to_a.sample, question_id: (1..35).to_a.sample, score: [1,-1].sample)
+    a_qv = QuestionVote.create(author_id: (1..10000).to_a.sample, question_id: (1..35).to_a.sample, score: 1)
   end
   a_qv.save
 end

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: "static_pages#root"
 
+  get '/highscores', to: 'highscores#index'
+  post '/highscores/new', to: 'highscores#new'
+
   get '/api/questions/user_questions', to: 'api/questions#user_questions'
   get '/api/questions/trending', to: 'api/questions#trending'
 
