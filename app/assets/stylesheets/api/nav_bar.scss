@@ -115,6 +115,7 @@
   flex-direction: column;
   -webkit-flex-direction: column;
   width: 50%;
+  min-width: 80px;
 }
 
 .logout-button h4{
@@ -143,6 +144,7 @@
   box-shadow: 0 0 1px transparent;
   position: relative;
   overflow: hidden;
+  min-width: 100px;
 }
 .hvr-underline-from-center:before {
   content: "";
