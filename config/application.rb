@@ -11,6 +11,14 @@ module InfiniteLoop
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://matthew-moon.com/down-the-hatch'
+        resource '/highscores', :headers => :any, :methods => [:get, :post]
+      end
+    end
+
     config.time_zone = 'Pacific Time (US & Canada)'
     config.active_record.default_timezone = :local
   end
